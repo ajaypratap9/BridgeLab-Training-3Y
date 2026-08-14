@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Application Form</title>
+</head>
+<body>
+    <h1>Internship Application Form</h1>
+     <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"><br><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required><br><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+        <label for="course">Course:</label>
+        <select id="course" name="course">
+            <option value="cse">Computer Science and Engineering</option>
+            <option value="it">Information Technology</option>
+            <option value="ece">Electronics and Communication Engineering</option>
+            <option value="mech">Mechanical Engineering</option>
+        </select><br><br>
+        <label for="skills">Skills:</label><br>
+        <input type="checkbox" id="python" name="skills" value="python">
+        <label for="python">Python</label><br>
+        <input type="checkbox" id="java" name="skills" value="java">
+        <label for="java">Java</label><br>
+        <input type="checkbox" id="html" name="skills" value="html">
+        <label for="html">HTML</label><br>
+        <input type="checkbox" id="css" name="skills" value="css">
+        <label for="css">CSS</label><br>
+
+        internship preference using radio
+        <label for="internship">Internship Preference:</label><br>
+        <input type="radio" id="frontend" name="internship" value="frontend">
+        <label for="frontend">Frontend Development</label><br>
+        <input type="radio" id="backend" name="internship" value="backend">
+        <label for="backend">Backend Development</label><br>
+        <input type="radio" id="fullstack" name="internship" value="fullstack">
+        <label for="fullstack">Full Stack Development</label><br><br>
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx"><br><br>
+        <label for="coverletter">Cover Letter:</label><br>
+        <textarea id="coverletter" name="coverletter" rows="5" cols="40" placeholder="Write your cover letter here"></textarea><br><br>
+        <input type="submit" value="Submit Application">
+</body>
+</html>
