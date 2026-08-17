@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Destination Dropdown Selection</title>
+</head>
+<body>
+
+    <header>
+        <h1>Tourist Destination Selector</h1>
+        <p>Select your preferred geographical region and favorite tourist attraction.</p>
+    </header>
+
+    <main>
+        <form action="#" method="get">
+            <fieldset>
+                <legend>Location Preferences</legend>
+
+                <p>
+                    <label for="country-select">Choose Country:</label><br>
+                    <select id="country-select" name="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="germany">Germany</option>
+                        <option value="india" selected>India</option>
+                        <option value="japan">Japan</option>
+                        <option value="united_states">United States</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="state-select">Choose State / Province:</label><br>
+                    <select id="state-select" name="state">
+                        <option value="delhi">Delhi</option>
+                        <option value="gujarat">Gujarat</option>
+                        <option value="maharashtra">Maharashtra</option>
+                        <option value="rajasthan">Rajasthan</option>
+                        <option value="uttar_pradesh" selected>Uttar Pradesh</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="city-select">Choose City:</label><br>
+                    <select id="city-select" name="city">
+                        <option value="agra">Agra</option>
+                        <option value="lucknow">Lucknow</option>
+                        <option value="mathura" selected>Mathura</option>
+                        <option value="prayagraj">Prayagraj</option>
+                        <option value="varanasi">Varanasi</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="tourist-place-select">Choose Favorite Tourist Place:</label><br>
+                    <select id="tourist-place-select" name="tourist_place">
+                        <option value="banke_bihari_temple">Banke Bihari Temple</option>
+                        <option value="govardhan_hill">Govardhan Hill</option>
+                        <option value="krishna_janmabhoomi">Shri Krishna Janmabhoomi</option>
+                        <option value="prem_mandir">Prem Mandir</option>
+                        <option value="vrindavan" selected>Vrindavan</option>
+                    </select>
+                </p>
+
+                <p>
+                    <input type="submit" value="Save Selection">
+                </p>
+            </fieldset>
+        </form>
+
+        <section>
+            <h2>Summary of Currently Selected Choices</h2>
+            <p>
+                <strong>Country:</strong> India<br>
+                <strong>State:</strong> Uttar Pradesh<br>
+                <strong>City:</strong> Mathura<br>
+                <strong>Favorite Tourist Place:</strong> Vrindavan
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Travel Selection Portal. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

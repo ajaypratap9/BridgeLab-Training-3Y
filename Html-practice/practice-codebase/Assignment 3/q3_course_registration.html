@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Course Registration</title>
+</head>
+<body>
+
+    <header>
+        <h1>University Course Registration Form</h1>
+        <p>Please fill out the form below to enroll in upcoming academic courses.</p>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Student Enrollment Details</legend>
+
+                <p>
+                    <label for="student-name">Student Full Name:</label><br>
+                    <input type="text" id="student-name" name="student_name" required>
+                </p>
+
+                <p>
+                    <label for="student-email">Email Address:</label><br>
+                    <input type="email" id="student-email" name="student_email" required>
+                </p>
+
+                <p>
+                    <label for="course-select">Select Course:</label><br>
+                    <select id="course-select" name="course_name" required>
+                        <option value="">-- Choose a Course --</option>
+                        <option value="web_dev">Web Development &amp; HTML5</option>
+                        <option value="data_structures">Data Structures &amp; Algorithms</option>
+                        <option value="database_systems">Database Management Systems</option>
+                        <option value="operating_systems">Operating Systems</option>
+                        <option value="machine_learning">Machine Learning Fundamentals</option>
+                    </select>
+                </p>
+
+                <p>
+                    <input type="submit" value="Register for Course">
+                </p>
+            </fieldset>
+        </form>
+
+        <section>
+            <h2>Available Course Schedules</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Instructor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Web Development &amp; HTML5</td>
+                        <td>Monday</td>
+                        <td>10:00 AM - 12:00 PM</td>
+                        <td>Prof. Rajesh Kumar</td>
+                    </tr>
+                    <tr>
+                        <td>Data Structures &amp; Algorithms</td>
+                        <td>Tuesday</td>
+                        <td>02:00 PM - 04:00 PM</td>
+                        <td>Dr. Anita Sharma</td>
+                    </tr>
+                    <tr>
+                        <td>Database Management Systems</td>
+                        <td>Wednesday</td>
+                        <td>11:00 AM - 01:00 PM</td>
+                        <td>Prof. Vikram Singh</td>
+                    </tr>
+                    <tr>
+                        <td>Operating Systems</td>
+                        <td>Thursday</td>
+                        <td>09:00 AM - 11:00 AM</td>
+                        <td>Dr. Meera Patel</td>
+                    </tr>
+                    <tr>
+                        <td>Machine Learning Fundamentals</td>
+                        <td>Friday</td>
+                        <td>03:00 PM - 05:00 PM</td>
+                        <td>Dr. Sanjay Gupta</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Academic Registration Portal. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
