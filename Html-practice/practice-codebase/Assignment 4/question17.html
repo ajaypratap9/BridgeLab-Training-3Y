@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 17 - Form File</title>
+</head>
+<body>
+    <h1>Submit Information</h1>
+    
+    <!-- Relationship Explanation: 
+         This is the 'form.html' file. 
+         It contains a form that, when submitted, will load 'result.html' inside the iframe below. 
+         We achieve this by setting the form's target to match the iframe's name attribute. -->
+         
+    <form action="result.html" method="get" target="resultFrame">
+        <label for="dataInput">Enter Name:</label>
+        <input type="text" id="dataInput" name="dataInput" required>
+        <input type="submit" value="Submit">
+    </form>
+    
+    <br>
+    
+    <!-- The iframe where result.html will appear -->
+    <iframe name="resultFrame" width="400" height="100"></iframe>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 9 - File Upload</title>
+</head>
+<body>
+    <h1>Upload Profile Picture</h1>
+    
+    <!-- Explanation paragraph -->
+    <p>Please select an image file to upload. Note that only .jpg or .png files are allowed.</p>
+    
+    <form action="#" method="post" enctype="multipart/form-data">
+        <!-- File input restricting to .jpg and .png using the accept attribute -->
+        <label for="profilePic">Choose Image:</label>
+        <input type="file" id="profilePic" name="profilePic" accept=".jpg, .png" required>
+        <br><br>
+        
+        <input type="submit" value="Upload File">
+    </form>
+</body>
+</html>
