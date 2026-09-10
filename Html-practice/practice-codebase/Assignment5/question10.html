@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model & Positioning Demo</title>
+    <link rel="stylesheet" href="question10.css">
+</head>
+<body>
+
+    <!-- 1. Header (Sticky) -->
+    <header class="sticky-header">
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Floating support button demonstrating position: fixed (in addition to sticky header requirement) -->
+    <div class="fixed-support">Support</div>
+
+    <!-- 2. Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Our Agency</h1>
+            <p>Creating beautiful digital experiences</p>
+        </div>
+    </section>
+
+    <!-- 3. About Section (2 Columns) -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>We are a forward-thinking creative agency specializing in modern web development and design.</p>
+                <p>Our team works closely with clients to deliver outstanding solutions using the latest technologies.</p>
+            </div>
+            <div class="about-image">
+                <!-- Using position: relative and absolute here -->
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&q=80" alt="Team">
+                    <div class="absolute-badge">10+ Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Services Section (3 Boxes) -->
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <h3>Web Design</h3>
+                <p>Beautiful layouts and user interfaces tailored for your brand.</p>
+            </div>
+            <div class="service-box">
+                <h3>Development</h3>
+                <p>Robust and scalable web applications built with modern tools.</p>
+            </div>
+            <div class="service-box">
+                <h3>Support</h3>
+                <p>24/7 technical support and regular maintenance for your projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer>
+        <p>&copy; 2026 Creative Agency. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

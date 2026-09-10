@@ -1,0 +1,83 @@
+/* Centering vertically and horizontally using flexbox on body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Theme background color */
+    background-color: #2c3e50;
+    /* Theme text color for body is handled inside form */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-form h2 {
+    margin-top: 0;
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Margin spacing between fields */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Input and textarea styling */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    /* Padding */
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    /* Border radius */
+    border-radius: 6px;
+    /* Subtle box shadow */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+/* Change border color on focus using :focus pseudo-class */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}

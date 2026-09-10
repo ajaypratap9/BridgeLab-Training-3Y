@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+/* Layout using Flexbox to create three equal columns */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Equal height boxes */
+    align-items: stretch;
+}
+
+.pricing-plan {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid #e1e4e8;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* CSS transition for smooth hover effect */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect: enlarge box and change background color */
+.pricing-plan:hover {
+    transform: scale(1.05);
+    background-color: #f8fbff;
+}
+
+.pricing-plan h2 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+.price {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+}
+
+.price span {
+    font-size: 16px;
+    color: #777;
+    font-weight: normal;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    flex-grow: 1; /* Pushes the button to the bottom to maintain equal height layout */
+}
+
+.features li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+/* Styled link button */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Highlight the Standard plan as popular */
+.popular-plan {
+    border: 2px solid #e74c3c;
+    position: relative;
+    transform: scale(1.02);
+}
+
+.popular-plan:hover {
+    transform: scale(1.07);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e74c3c;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pricing-plan {
+        width: 100%;
+        max-width: 400px;
+    }
+    .popular-plan {
+        transform: scale(1);
+    }
+    .popular-plan:hover {
+        transform: scale(1.05);
+    }
+}

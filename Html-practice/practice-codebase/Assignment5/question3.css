@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+header h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Layout using Flexbox */
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Box model demonstration: padding, margin, border */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    /* Rounded corners */
+    border-radius: 10px;
+    /* Box shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.card h3 {
+    color: #7f8c8d;
+    font-weight: normal;
+}
+
+/* Highlighted Team Lead card */
+.lead-card {
+    background-color: #e8f4fd;
+    border: 2px dashed #3498db;
+}
+
+/* Responsive design for screens below 600px */
+@media (max-width: 600px) {
+    .team-container {
+        /* Automatically becomes a single-column layout */
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

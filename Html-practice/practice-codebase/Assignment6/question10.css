@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+/* Flexbox Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 30px;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.main-wrapper {
+    flex: 1;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Animation on Page Title using @keyframes */
+.page-title {
+    text-align: center;
+    color: #333;
+    /* Title fades in and moves upward */
+    animation: fadeUp 1s ease-out;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Grid Main Area (2 Columns) */
+.grid-main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.article-area {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Flexbox inside Article */
+.flex-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.flex-boxes .box {
+    background-color: #3498db;
+    color: white;
+    padding: 30px;
+    flex: 1;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.sidebar-area {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-area ul {
+    padding-left: 20px;
+}
+
+/* Footer Full Width Centered */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Responsive single-column mobile layout */
+@media (max-width: 768px) {
+    .grid-main {
+        /* Collapse 2 columns to 1 column */
+        grid-template-columns: 1fr;
+    }
+    
+    .flex-boxes {
+        /* Collapse flex boxes to stack */
+        flex-direction: column;
+    }
+}

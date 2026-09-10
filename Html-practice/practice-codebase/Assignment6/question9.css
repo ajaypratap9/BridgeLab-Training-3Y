@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #ecf0f1;
+    /* Center card on the screen using Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Outer card container with perspective */
+.flip-card-container {
+    background-color: transparent;
+    width: 300px;
+    height: 400px;
+    /* 3D effect perspective */
+    perspective: 1000px;
+}
+
+/* Inner container holding front and back */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    /* Smooth animation */
+    transition: transform 0.8s;
+    /* Required for 3D setup */
+    transform-style: preserve-3d;
+}
+
+/* Flip card on hover */
+.flip-card-container:hover .flip-card-inner {
+    /* Required flip rotation */
+    transform: rotateY(180deg);
+}
+
+/* Common styling for front and back */
+.flip-card-front, .flip-card-back {
+    /* Position absolute to overlap */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Hide the backface when flipped */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Front side */
+.flip-card-front {
+    background-color: white;
+    color: #2c3e50;
+}
+
+.flip-card-front img {
+    border-radius: 50%;
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Back side */
+.flip-card-back {
+    background-color: #3498db;
+    color: white;
+    /* Pre-rotate the back side so it displays correctly when flipped */
+    transform: rotateY(180deg);
+}

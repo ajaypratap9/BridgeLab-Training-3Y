@@ -1,0 +1,74 @@
+/* Background color and custom font family */
+body {
+    background-color: #fdfbf7;
+    font-family: 'Times New Roman', Times, serif;
+    color: #111;
+    margin: 0;
+    padding: 30px;
+}
+
+.newspaper-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Padding around main content */
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Custom typography and spanning all columns */
+.main-heading {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    /* Span heading across all columns */
+    column-span: all;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Creating three columns with gap */
+.article-content {
+    /* Three vertical text columns */
+    column-count: 3;
+    /* Spacing between columns */
+    column-gap: 40px;
+    /* Text alignment */
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Align image to left using float */
+.article-img {
+    float: left;
+    margin: 0 15px 15px 0;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.article-content p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Responsive layout: Reduce column count on smaller screens */
+@media (max-width: 800px) {
+    .article-content {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 500px) {
+    .article-content {
+        column-count: 1;
+    }
+    .article-img {
+        width: 100%;
+        float: none;
+        margin: 0 0 15px 0;
+    }
+}

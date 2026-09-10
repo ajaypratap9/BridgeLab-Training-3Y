@@ -1,0 +1,69 @@
+body {
+    font-family: Georgia, serif;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.8;
+    padding: 40px 20px;
+}
+
+article {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.subheading {
+    color: #7f8c8d;
+    font-style: italic;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Paragraph spacing using margins */
+.article-body p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+/* Make the first letter of every paragraph larger */
+.article-body p::first-letter {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #e74c3c;
+    float: left;
+    margin-right: 8px;
+    line-height: 1;
+}
+
+/* Make the first line of every paragraph bold */
+.article-body p::first-line {
+    font-weight: bold;
+}
+
+/* Customize the <mark> background color */
+mark {
+    background-color: #f1c40f;
+    color: #000;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
+/* Style blockquote with left border and background color */
+blockquote {
+    background-color: #f8f9fa;
+    border-left: 5px solid #3498db;
+    margin: 30px 0;
+    padding: 20px;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #555;
+}
