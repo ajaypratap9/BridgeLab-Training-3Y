@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2 - Height and Width Practice</title>
+    <link rel="stylesheet" href="question2.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Height and Width Practice</h1>
+            <p>Three boxes with different dimensions built using different CSS units
+               (<code>px</code>, <code>%</code>, <code>vh</code>, <code>em</code>),
+               plus <code>min-height</code>, <code>max-width</code> and <code>overflow</code>.</p>
+        </header>
+
+        <!-- Flexbox centers all three boxes vertically and horizontally -->
+        <section class="box-arena">
+
+            <!-- Box A: px + min-height. Height grows if content needs more room -->
+            <article class="demo-box box-one">
+                <h2>Box 1 - px + min-height</h2>
+                <p><code>width: 240px</code></p>
+                <p><code>min-height: 200px</code></p>
+                <p>This box uses fixed pixel (px) width. Its minimum height is 200px,
+                   but it can grow taller on its own if the content needs more space.</p>
+            </article>
+
+            <!-- Box B: % width + overflow. Too much text is clipped with a scrollbar -->
+            <article class="demo-box box-two">
+                <h2>Box 2 - % width + overflow</h2>
+                <p><code>width: 40%</code></p>
+                <p><code>overflow: auto</code></p>
+                <p>This box's width is 40% of the parent container. Plenty of text is
+                   placed inside so you can see how the <code>overflow: auto</code>
+                   property scrolls the overflowing content instead of breaking the layout.
+                   Keep reading to fill the box... Lorem ipsum dolor sit amet, consectetur
+                   adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+                   magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                   ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                   irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                   fugiat nulla pariatur.</p>
+            </article>
+
+            <!-- Box C: vh height + em sizes + max-width -->
+            <article class="demo-box box-three">
+                <h2>Box 3 - vh + em</h2>
+                <p><code>height: 32vh</code></p>
+                <p><code>max-width: 55em</code></p>
+                <p>This box is 32 units of <em>viewport height</em> (32% of the screen
+                   height). Font sizes and the maximum width are written in <em>em</em>,
+                   which scale relative to the base font size.</p>
+            </article>
+
+        </section>
+    </main>
+</body>
+</html>

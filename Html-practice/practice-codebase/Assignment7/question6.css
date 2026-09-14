@@ -1,0 +1,138 @@
+/* ============================================================
+   Question 6 - CSS Transformations Showcase
+   Demonstrates rotate(), scale(), translate() and skew(),
+   each activated on :hover with a smooth 0.4s transition.
+   ============================================================ */
+
+/* Reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.05rem;
+    max-width: 760px;
+    margin: 0 auto 45px auto;
+    color: #555555;
+}
+
+header code {
+    background-color: #eef1f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ------------------------------------------------------------
+   Flexbox: places the four demo units in a horizontal row.
+   ------------------------------------------------------------ */
+.transform-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+/* Each transformation box is the same size so the effects are
+   compared fairly. Every box uses ::before text? No - the label
+   text is inside <p>; the box below simply centers it via Flexbox. */
+.transform-box {
+    width: 160px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5c6bc0;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* All four transformations animate smoothly in 0.4 seconds */
+    transition: all 0.4s ease;
+}
+
+/* Caption under each box */
+.caption {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    color: #555555;
+    max-width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ------------------------------------------------------------
+   ROTATE: transform: rotate(deg) spins the box around its center.
+   On hover it turns 12 degrees clockwise.
+   ------------------------------------------------------------ */
+.box-rotate {
+    background-color: #5c6bc0;
+}
+
+.box-rotate:hover {
+    transform: rotate(12deg);
+}
+
+/* ------------------------------------------------------------
+   SCALE: transform: scale(x, y) changes the element's size.
+   scale(1.15) enlarges it to 115% of its normal size.
+   ------------------------------------------------------------ */
+.box-scale {
+    background-color: #e67e22;
+}
+
+.box-scale:hover {
+    transform: scale(1.15);
+}
+
+/* ------------------------------------------------------------
+   TRANSLATE: transform: translate(dx, dy) moves the element
+   along the X and Y axes. translateY(-18px) lifts it upward.
+   ------------------------------------------------------------ */
+.box-translate {
+    background-color: #27ae60;
+}
+
+.box-translate:hover {
+    transform: translateY(-18px);
+}
+
+/* ------------------------------------------------------------
+   SKEW: transform: skew(x-angle, y-angle) slants the element.
+   skew(10deg, 4deg) tilts it slightly on both axes.
+   ------------------------------------------------------------ */
+.box-skew {
+    background-color: #c0392b;
+}
+
+.box-skew:hover {
+    transform: skew(10deg, 4deg);
+}

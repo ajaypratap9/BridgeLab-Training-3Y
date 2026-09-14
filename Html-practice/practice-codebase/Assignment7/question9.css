@@ -1,0 +1,159 @@
+/* ============================================================
+   Question 9 - Outline and Focus Styling Form
+   Demonstrates outline, outline-offset, :focus outline color
+   changes, padding, border-radius and subtle box-shadows.
+   ============================================================ */
+
+/* Reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eef1f5;
+    color: #333333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.02rem;
+    max-width: 760px;
+    margin: 0 auto 35px auto;
+    color: #555555;
+}
+
+header code {
+    background-color: #dfe5ee;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ------------------------------------------------------------
+   Flexbox centers the form card on the page.
+   ------------------------------------------------------------ */
+.form-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 520px;
+    background-color: #ffffff;
+    border: 2px solid #d7dee8;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+    padding: 35px 40px;
+    text-align: left;
+}
+
+.contact-form h2 {
+    color: #2c3e50;
+    margin-bottom: 22px;
+    font-size: 1.35rem;
+    text-align: center;
+}
+
+/* Uniform spacing between every field group */
+.field-group {
+    margin-bottom: 22px;
+}
+
+.field-group label {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: bold;
+    color: #445a70;
+    margin-bottom: 6px;
+}
+
+/* ------------------------------------------------------------
+   Form controls: shared padding, border-radius and subtle shadow.
+   outline sets a default visible outline; outline-offset pushes
+   that outline 3px away from the border edge so the halo effect
+   is clearly separated from the input itself.
+   ------------------------------------------------------------ */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;                 /* comfortable clickable area */
+    border: 2px solid #b8c2cc;          /* light grey border */
+    border-radius: 8px;                 /* rounded field corners */
+    font-family: inherit;
+    font-size: 0.98rem;
+    color: #2c3e50;
+    background-color: #fafbfc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);   /* subtle resting shadow */
+}
+
+/* ------------------------------------------------------------
+   :focus - the outline turns a bright blue and moves outward.
+   outline-offset: 3px gives a small gap between the field border
+   and the focus ring, making the focus state very readable.
+   ------------------------------------------------------------ */
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #3a90e0;         /* strong colored focus ring */
+    outline-offset: 3px;                /* ring sits 3px outside the border */
+    border-color: #2c6fb5;              /* border darkens too */
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(58, 144, 224, 0.25);
+}
+
+/* Outlines in a second style for the select, showing a dashed look */
+select:focus {
+    outline: 3px dashed #e67e22;
+    outline-offset: 4px;
+    border-color: #d35400;
+}
+
+/* Textarea aligns top-left and stays vertically resizable only */
+textarea {
+    resize: vertical;
+}
+
+/* ------------------------------------------------------------
+   Submit button: a filled button with rounded corners,
+   padding and a subtle resting shadow. A hover state gives
+   extra feedback without relying on focus.
+   ------------------------------------------------------------ */
+.submit-button {
+    width: 100%;
+    background-color: #2c6fb5;
+    color: #ffffff;
+    font-size: 1.02rem;
+    font-weight: bold;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(44, 111, 181, 0.35);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #1f5690;
+    box-shadow: 0 5px 12px rgba(44, 111, 181, 0.45);
+}

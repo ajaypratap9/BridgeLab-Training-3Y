@@ -1,0 +1,277 @@
+/* ============================================================
+   Question 5 - Advanced CSS Selectors
+   Demonstrates attribute selectors, pseudo-classes,
+   pseudo-elements and all four combinators.
+   ============================================================ */
+
+/* Reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px 60px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+header p {
+    color: #666666;
+    max-width: 700px;
+    margin: 8px auto 0 auto;
+}
+
+code {
+    background-color: #eef1f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.demo-section {
+    background-color: #ffffff;
+    border: 1px solid #e2e7ee;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.demo-section h2 {
+    font-size: 1.35rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #d7dee8;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.demo-section .note {
+    font-size: 0.95rem;
+    color: #555555;
+    margin-bottom: 16px;
+}
+
+/* ------------------------------------------------------------
+   ATTRIBUTE SELECTORS
+   [attr] matches an element that has the given attribute.
+   [attr="value"] matches an exact value.
+   [attr^="prefix"] matches attributes that START with the value.
+   ------------------------------------------------------------ */
+
+/* Attribute selector: targets only inputs whose type is "text".
+   The email input is NOT matched, so it stays plain. */
+input[type="text"] {
+    border: 2px solid #3498db;
+    background-color: #ebf5fb;
+    padding: 8px 10px;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+/* Attribute selector: targets only links whose href starts with "https".
+   Plain file:// links are not matched. */
+a[href^="https"] {
+    color: #1e8449;
+    background-color: #eafaf1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a[href^="https"]:hover {
+    text-decoration: underline;
+}
+
+.attr-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #444444;
+}
+
+.link-list {
+    margin-top: 16px;
+}
+
+.link-list h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.link-list a {
+    display: inline-block;
+    margin-right: 18px;
+    margin-bottom: 6px;
+    padding: 4px 10px;
+}
+
+/* ------------------------------------------------------------
+   PSEUDO-CLASSES
+   :hover  - applies while the pointer is over the element.
+   :focus  - applies while an element (e.g. input) is active.
+   :nth-child(n) - picks an element by its position among siblings.
+   ------------------------------------------------------------ */
+
+/* :hover demonstration - the row turns blue when hovered */
+.hover-zone {
+    background-color: #f9fafc;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.hover-zone label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+/* :focus demonstration - the border turns green and grows while the field is focused */
+.focus-demo {
+    width: 100%;
+    padding: 8px 10px;
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.focus-demo:focus {
+    outline: none;
+    border-color: #27ae60;
+    box-shadow: 0 0 6px rgba(39, 174, 96, 0.5);
+}
+
+/* :nth-child demonstration - highlight the 3rd child only */
+.color-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* :nth-child() targets the third list item */
+.color-list li:nth-child(3) {
+    background-color: #1f618d;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* :hover targets any list row the mouse crosses */
+.color-list li:hover {
+    background-color: #dbeafe;
+}
+
+.color-list li:nth-child(3):hover {
+    background-color: #1a5378;
+}
+
+.color-list li {
+    background-color: #ffffff;
+    border: 1px solid #e2e7ee;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    transition: background-color 0.25s ease;
+}
+
+/* ------------------------------------------------------------
+   PSEUDO-ELEMENTS
+   ::before - inserts generated content BEFORE the element.
+   ::after  - inserts generated content AFTER the element.
+   The content property is required for both.
+   ------------------------------------------------------------ */
+
+/* ::before draws the "TAG:" label before the heading text */
+.pseudo-demo h3::before {
+    content: "note: ";
+    background-color: #e67e22;
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 8px;
+}
+
+/* ::after draws a decorative ribbon after the paragraph */
+.pseudo-demo p::after {
+    content: "<< generated with ::after >>";
+    display: block;
+    margin-top: 12px;
+    color: #8e44ad;
+    background-color: #f3e9fb;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* ------------------------------------------------------------
+   COMBINATORS
+   1. Child combinator (A > B)  - B is a DIRECT child of A.
+   2. Adjacent sibling (A + B)  - B immediately follows A.
+   3. General sibling (A ~ B)   - B follows A (not necessarily right after).
+   4. Descendant (A B)          - B is ANY deeper element inside A.
+   ------------------------------------------------------------ */
+
+/* 1. CHILD combinator: direct <p> children of the article are blue */
+.parent-box > p {
+    color: #2980b9;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* 4. DESCENDANT combinator (space): every <p> anywhere inside the
+      nested section gets an orange left border, even deeper levels. */
+.parent-box .child-section p {
+    border-left: 4px solid #e67e22;
+    background-color: #fdf3e7;
+    padding: 6px 10px;
+    margin: 4px 0;
+    font-weight: normal;
+}
+
+/* 2. ADJACENT SIBLING combinator: the <p> that comes RIGHT AFTER
+      the article gets a pink left bar. */
+.parent-box + p {
+    border-left: 4px solid #c0392b;
+    background-color: #fbeaea;
+    padding: 8px 12px;
+    margin-top: 14px;
+    color: #a93226;
+}
+
+/* 3. GENERAL SIBLING combinator: matches EVERY <p> that follows the
+      article, whether it is adjacent or not. The teal dashed underline
+      appears on all following paragraphs. */
+.parent-box ~ p {
+    border-bottom: 2px dashed #16a085;
+    padding: 8px 12px;
+    margin-top: 10px;
+    color: #117a65;
+}
+
+/* The adjacent sibling keeps its pink left bar while also receiving the
+   general-sibling underline, so both selectors are visible on it. */
+.parent-box + p {
+    border-bottom: 2px dashed #16a085;
+    border-left-width: 4px;
+}

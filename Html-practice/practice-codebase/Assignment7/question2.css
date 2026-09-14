@@ -1,0 +1,128 @@
+/* ============================================================
+   Question 2 - Height and Width Practice
+   Demonstrates different sizing units (px, %, vh, em),
+   min-height, max-width, overflow and a centered Flexbox layout.
+   ============================================================ */
+
+/* Reset margins and paddings; switch to border-box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;          /* base size so em values are predictable */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.05rem;
+    max-width: 760px;
+    margin: 0 auto 30px auto;
+    color: #555555;
+}
+
+header code {
+    background-color: #eef1f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ------------------------------------------------------------
+   Flexbox: display:flex + align-items:center + justify-content:center
+   centers the three boxes both vertically and horizontally.
+   ------------------------------------------------------------ */
+.box-arena {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    min-height: 70vh;          /* arena is tall so vertical centering is visible */
+}
+
+/* Shared look for all demo boxes */
+.demo-box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.demo-box h2 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.demo-box p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+.demo-box code {
+    background-color: #eef1f5;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.88rem;
+}
+
+/* ------------------------------------------------------------
+   Box 1 - px and min-height
+   width is fixed in pixels. Use min-height instead of height
+   so the box freely grows if more content is added.
+   ------------------------------------------------------------ */
+.box-one {
+    width: 240px;                              /* fixed pixel width */
+    min-height: 200px;                         /* minimum height in px */
+    background-color: #dbeaff;                 /* light blue */
+}
+
+/* ------------------------------------------------------------
+   Box 2 - % and overflow
+   width is 40% of the flex parent. min-height keeps it visible.
+   overflow: auto adds a scrollbar when the text is taller than
+   the box instead of bleeding outside the box.
+   ------------------------------------------------------------ */
+.box-two {
+    width: 40%;                                /* percentage of parent width */
+    min-height: 240px;
+    height: 260px;                             /* fixed height so overflow can happen */
+    overflow: auto;                            /* scroll clipped content */
+    background-color: #ffe8cc;                 /* light orange */
+}
+
+/* ------------------------------------------------------------
+   Box 3 - vh and em
+   height: 32vh = 32% of the browser viewport height.
+   max-width: 55em caps the width relative to the font size.
+   font-size uses em as well.
+   ------------------------------------------------------------ */
+.box-three {
+    height: 32vh;                              /* viewport-relative height */
+    max-width: 55em;                           /* width cap measured in em */
+    font-size: 0.95em;                         /* em-based font size */
+    background-color: #d5f5e3;                 /* light green */
+}

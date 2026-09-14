@@ -1,0 +1,176 @@
+/* ============================================================
+   Question 4 - Shadows and Depth Effect
+   Demonstrates different box-shadow styles, text-shadow,
+   a hover lift effect and CSS transitions.
+   ============================================================ */
+
+/* Reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #edf1f7;
+    color: #333333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.05rem;
+    max-width: 760px;
+    margin: 0 auto 40px auto;
+    color: #555555;
+}
+
+header code {
+    background-color: #dfe5ee;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ------------------------------------------------------------
+   Flexbox row: cards sit next to each other in one row.
+   gap keeps equal spacing between the three cards.
+   ------------------------------------------------------------ */
+.card-row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Shared card base.
+   transition animates transform + box-shadow so the lift
+   on hover looks smooth instead of jumping.
+   transition: all 0.3s ease; would also work but listing
+   the properties makes the intent clearer.
+   ------------------------------------------------------------ */
+.profile-card {
+    flex: 1 1 250px;
+    max-width: 330px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px 25px;
+    text-align: left;
+    position: relative;                 /* anchor for the badge */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card h2 {
+    font-size: 1.35rem;
+    color: #ffffff;                    /* heading as a colored label */
+    margin-bottom: 8px;
+    padding: 6px 0;
+    /* text-shadow softens the text against its background
+       and adds a subtle depth glow under the letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.55);
+}
+
+.profile-card .role {
+    font-size: 0.9rem;
+    color: #666666;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.profile-card .bio {
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+.badge {
+    position: absolute;
+    top: -12px;
+    right: 18px;
+    background-color: #2c3e50;
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ------------------------------------------------------------
+   Card 1 - SOFT shadow.
+   A small, evenly spread blur creates a gentle floating card.
+   ------------------------------------------------------------ */
+.card-soft {
+    background-color: #8e9dd4;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-soft h2 {
+    background-color: #5c6bc0;
+}
+
+/* ------------------------------------------------------------
+   Card 2 - TIGHT shadow.
+   Zero blur (offset only) creates a crisp, hard-edged "lifted"
+   shadow that looks like the card is separated from the page.
+   ------------------------------------------------------------ */
+.card-tight {
+    background-color: #efb2a4;
+    box-shadow: 8px 8px 0 #b04a2f;
+}
+
+.card-tight h2 {
+    background-color: #c0582f;
+}
+
+/* ------------------------------------------------------------
+   Card 3 - DEEP shadow.
+   Multiple comma-separated shadows stack: a large soft one
+   plus a stronger dark one directly beneath the card.
+   ------------------------------------------------------------ */
+.card-bottom {
+    background-color: #9fd8c4;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18),
+                0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.card-bottom h2 {
+    background-color: #1f7a5c;
+}
+
+/* ------------------------------------------------------------
+   Hover behavior: every card lifts upward and grows its
+   shadow. transform: translateY(-12px) moves the card up,
+   while a taller, darker shadow makes it look higher above
+   the page. The transition on .profile-card makes it smooth.
+   ------------------------------------------------------------ */
+.card-soft:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-tight:hover {
+    transform: translateY(-12px);
+    box-shadow: 14px 16px 0 #8f3a21;   /* shadow shifts down with the lift */
+}
+
+.card-bottom:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3),
+                0 12px 18px rgba(0, 0, 0, 0.35);
+}

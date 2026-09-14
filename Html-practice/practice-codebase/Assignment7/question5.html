@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 5 - Advanced CSS Selectors</title>
+    <link rel="stylesheet" href="question5.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Advanced CSS Selectors</h1>
+            <p>This page demonstrates attribute selectors, pseudo-classes,
+               pseudo-elements and the four combinators. Read the CSS comments
+               to see which rule styles which element.</p>
+        </header>
+
+        <!-- ============ 1. Attribute selectors ============ -->
+        <section class="demo-section">
+            <h2>Attribute Selectors</h2>
+            <p class="note"><code>[type="text"]</code> targets the text inputs below;
+               <code>[href^="https"]</code> targets secure links.</p>
+
+            <form class="attr-form" action="#" method="get">
+                <label for="name">Name (text input)</label>
+                <input type="text" id="name" placeholder="e.g. Ajay">
+
+                <label for="email">Email input (not affected)</label>
+                <input type="email" id="email" placeholder="you@example.com">
+            </form>
+
+            <div class="link-list">
+                <h3>Links — secure ones glow green</h3>
+                <a href="https://developer.mozilla.org" target="_blank">HTTPS link (MDN)</a>
+                <a href="https://github.com" target="_blank">HTTPS link (GitHub)</a>
+                <a href="file:///local/doc.html">Plain file link (unchanged)</a>
+            </div>
+        </section>
+
+        <!-- ============ 2. Pseudo-classes ============ -->
+        <section class="demo-section">
+            <h2>Pseudo-classes</h2>
+            <p class="note"><code>:hover</code> and <code>:focus</code> react to the
+               mouse and keyboard; <code>:nth-child()</code> targets items by position.</p>
+
+            <div class="hover-zone">
+                <p>Move your mouse over the list, tab into a field, or watch the rows below.</p>
+
+                <label for="focus-field">Focus this field:</label>
+                <input type="text" id="focus-field" class="focus-demo" value="Click or tab here">
+
+                <ul class="color-list">
+                    <li>First item (nth-child 1)</li>
+                    <li>Second item (nth-child 2)</li>
+                    <li>Third item (nth-child 3)</li>
+                    <li>Fourth item (nth-child 4)</li>
+                    <li>Fifth item (nth-child 5)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============ 3. Pseudo-elements ============ -->
+        <section class="demo-section">
+            <h2>Pseudo-elements</h2>
+            <p class="note"><code>::before</code> and <code>::after</code> inject
+               generated decorations.</p>
+
+            <div class="pseudo-demo">
+                <h3>Styled Heading</h3>
+                <p>This box shows a leading tag created with <code>::before</code> and
+                   a trailing ribbon made with <code>::after</code>.</p>
+            </div>
+        </section>
+
+        <!-- ============ 4. Combinators ============ -->
+        <section class="demo-section">
+            <h2>Combinators</h2>
+            <p class="note">Four combinators applied to this family tree:
+               child <code>&gt;</code>, adjacent sibling <code>+</code>,
+               general sibling <code>~</code>, and the descendant (space).</p>
+
+            <div class="family">
+                <article class="parent-box">
+                    <h3>Parent (article)</h3>
+                    <p>First paragraph — direct child of article.</p>
+                    <p>Second paragraph — also a direct child.</p>
+
+                    <section class="child-section">
+                        <h4>Nested section</h4>
+                        <p>This paragraph is a <em>descendant</em> (deeper level).</p>
+                        <p>Another deeply nested paragraph.</p>
+                    </section>
+                </article>
+
+                <p class="sibling-adjacent">Adjacent sibling — immediately follows the article.</p>
+                <p class="sibling-general">General sibling — also follows the article.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

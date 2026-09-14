@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3 - Gradient Background Webpage</title>
+    <link rel="stylesheet" href="question3.css">
+</head>
+<body>
+    <!-- Fixed header stays on top while the page scrolls -->
+    <header class="site-header">
+        <h1>Gradient Background Webpage</h1>
+        <p>Linear and radial gradients with a parallax-style fixed attachment.</p>
+    </header>
+
+    <main>
+        <!-- First major section: linear gradient -->
+        <section class="section section-linear">
+            <h2>Linear Gradient</h2>
+            <p>This section's background is a <strong>linear-gradient()</strong>. The
+               color transitions in a straight line from one corner/angle to another —
+               here from a deep blue at the top to purple at the bottom.</p>
+        </section>
+
+        <!-- Second major section: radial gradient + background-attachment: fixed -->
+        <section class="section section-radial">
+            <h2>Radial Gradient with Fixed Attachment</h2>
+            <p>This section's background is a <strong>radial-gradient()</strong>.
+               The colors radiate outward from a central point like ripples.
+               Because <code>background-attachment: fixed</code> is applied, the
+               background stays still while the page scrolls — creating a subtle
+               parallax-like depth effect as you move up and down.</p>
+        </section>
+
+        <!-- Extra spacer section so the page is tall enough to scroll -->
+        <section class="section section-simple">
+            <h2>Keep Scrolling</h2>
+            <p>The radial gradient behind the section above stays fixed in place while
+               this text scrolls over it. Scroll back up to watch the effect.</p>
+        </section>
+    </main>
+
+    <!-- Fixed footer stays at the bottom of the viewport -->
+    <footer class="site-footer">
+        <p>Created for Assignment 7 — Question 3.</p>
+    </footer>
+</body>
+</html>

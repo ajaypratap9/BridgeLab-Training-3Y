@@ -1,0 +1,137 @@
+/* ============================================================
+   Question 1 - Borders and Padding
+   This stylesheet demonstrates border styles, border-radius,
+   padding differences, Flexbox layout and hover transitions.
+   ============================================================ */
+
+/* Basic reset so margins/paddings behave consistently */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.05rem;
+    max-width: 720px;
+    margin: 0 auto 40px auto;
+    color: #555555;
+}
+
+/* ------------------------------------------------------------
+   Flexbox: arranges the four boxes in one horizontal row.
+   justify-content: space-between spreads them evenly,
+   while gap adds consistent spacing between the boxes.
+   ------------------------------------------------------------ */
+.box-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Shared styles for every demo box */
+.box {
+    flex: 1 1 220px;                /* boxes grow equally and shrink to fit */
+    background-color: #ffffff;
+    text-align: left;
+    border-radius: 10px;             /* rounded corners on every box */
+}
+
+.box h2 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.box p {
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+.box code {
+    background-color: #eef1f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   Border styles + different padding values.
+   Each box uses a special padding size so the internal
+   spacing difference is immediately obvious.
+   ------------------------------------------------------------ */
+
+/* Solid border - small padding (content close to the edge) */
+.box-solid {
+    border: 4px solid #3498db;       /* solid border, shorthand = width style color */
+    padding: 10px;
+}
+
+/* Dashed border - medium padding */
+.box-dashed {
+    border: 4px dashed #e67e22;      /* dashed border style */
+    padding: 25px;
+}
+
+/* Double border - large padding (two parallel lines) */
+.box-double {
+    border: 5px double #27ae60;      /* double border draws two lines */
+    padding: 45px;
+}
+
+/* Groove border - carved/3D look, extra-large padding + radius */
+.box-groove {
+    border: 6px groove #8e44ad;      /* groove border looks indented */
+    padding: 60px;
+    border-radius: 4px;              /* smaller radius keeps 3D edge clean */
+}
+
+/* ------------------------------------------------------------
+   Hover effect: the border color changes smoothly.
+   transition animates the border-color change over 0.4s.
+   ------------------------------------------------------------ */
+.box-solid:hover {
+    border-color: #d35400;
+    transition: border-color 0.4s ease;
+}
+
+.box-dashed:hover {
+    border-color: #2980b9;
+    transition: border-color 0.4s ease;
+}
+
+.box-double:hover {
+    border-color: #c0392b;
+    transition: border-color 0.4s ease;
+}
+
+.box-groove:hover {
+    border-color: #d35400;
+    transition: border-color 0.4s ease;
+}

@@ -1,0 +1,247 @@
+/* ============================================================
+   Question 8 - Box Model Exploration
+   Visually explains content, padding, border and margin,
+   and compares default box-sizing with box-sizing: border-box.
+   ============================================================ */
+
+/* Reset margins; NB: we deliberately DON'T set box-sizing here
+   so the comparison below shows the true default behavior. */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eef1f5;
+    color: #333333;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.05rem;
+    max-width: 780px;
+    margin: 0 auto 35px auto;
+    color: #555555;
+}
+
+header code {
+    background-color: #dfe5ee;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ------------------------------------------------------------
+   Flexbox centers the whole multi-part demonstration.
+   The column direction stacks diagram, explanation and the
+   sizing comparison vertically with equal spacing.
+   ------------------------------------------------------------ */
+.stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* ------------------------------------------------------------
+   BOX MODEL DIAGRAM
+   Nested divs, each one representing a layer. A larger margin
+   (yellow), a border (orange), padding (green) and content
+   (blue) inside. Each layer has its own label.
+   ------------------------------------------------------------ */
+
+.box-diagram {
+    max-width: 560px;
+    width: 100%;
+}
+
+/* Margin layer - yellow with a dashed outline so its outer edge is visible */
+.layer-margin {
+    background-color: #f9e79f;
+    padding: 55px;
+    border: 2px dashed #d4ac0d;
+    border-radius: 14px;
+    position: relative;   /* anchor for label placement */
+}
+
+/* Border layer - a thick solid orange ring created with padding + background */
+.layer-border {
+    background-color: #f0b27a;
+    padding: 40px;
+    border: 6px solid #ca6f1e;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Padding layer - light green area between border and content */
+.layer-padding {
+    background-color: #a9dfbf;
+    padding: 40px;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Content layer - deepest, solid blue box holding the word "Content" */
+.layer-content {
+    background-color: #85c1e9;
+    border-radius: 6px;
+    padding: 22px;
+    text-align: center;
+    font-weight: bold;
+    color: #1b2631;
+    border: 2px solid #2874a6;
+}
+
+/* The labels float at the top-left of each colored layer */
+.layer-label {
+    position: absolute;
+    top: -22px;
+    left: 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #4d3f00;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 3px;
+    padding: 1px 6px;
+}
+
+.layer-margin .layer-label {
+    top: 8px;
+    left: 8px;
+}
+
+.layer-border .layer-label {
+    color: #7b3f00;
+}
+
+.layer-padding .layer-label {
+    color: #145a32;
+}
+
+/* ------------------------------------------------------------
+   EXPLANATION TEXT (definition list)
+   ------------------------------------------------------------ */
+.explanation {
+    max-width: 560px;
+    width: 100%;
+    text-align: left;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 24px 28px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.explanation h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.explanation dl {
+    display: grid;
+    grid-template-columns: 110px 1fr;   /* label column + description column */
+    gap: 6px 14px;
+}
+
+.explanation dt {
+    font-weight: bold;
+    color: #1b4d89;
+}
+
+.explanation dd {
+    color: #555555;
+}
+
+/* ------------------------------------------------------------
+   BOX-SIZING COMPARISON
+   Two boxes with the SAME declared width and padding. Only the
+   box-sizing value differs, which changes the actual measured size.
+   ------------------------------------------------------------ */
+.sizing-comparison {
+    width: 100%;
+}
+
+.sizing-comparison h2 {
+    color: #2c3e50;
+    margin-bottom: 18px;
+}
+
+/* Flexbox places the two cards side by side */
+.comparison-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.sizing-card {
+    flex: 1 1 300px;
+    max-width: 390px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+.sizing-card h3 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.sizing-card p {
+    font-size: 0.95rem;
+    color: #555555;
+    margin-bottom: 12px;
+}
+
+.sizing-card .result {
+    font-size: 0.92rem;
+    background-color: #f4f6f9;
+    border-radius: 6px;
+    padding: 8px 10px;
+}
+
+/* Both boxes declare the SAME width and padding. Default box-sizing
+   (content-box) adds border below the declared width, so the box
+   physically grows beyond 200px. */
+.measure {
+    width: 200px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.content-box-piece {
+    background-color: #fadbd8;
+    border: 8px solid #c0392b;
+    /* box-sizing is DEFAULT here: total used width = 200 + 16 = 216px */
+    padding: 10px;
+}
+
+/* box-sizing: border-box forces the padding and border INSIDE the
+   declared 200px, so the visible box keeps exactly its width. */
+.border-box-piece {
+    background-color: #d5f5e3;
+    border: 8px solid #27ae60;
+    box-sizing: border-box;   /* padding + border are now included in 200px */
+    padding: 10px;
+}

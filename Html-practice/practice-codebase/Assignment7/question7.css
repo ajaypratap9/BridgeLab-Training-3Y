@@ -1,0 +1,174 @@
+/* ============================================================
+   Question 7 - Typography and Text Styling
+   Demonstrates font families, weights, sizes, line-height,
+   letter-spacing, text-align, custom mark/strong/em colors
+   and the ::first-letter / ::first-line pseudo-elements.
+   ============================================================ */
+
+/* Reset margins and paddings; the root font size is the base
+   reference all em/rem values below are computed from. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+}
+
+body {
+    background-color: #f6f4ef;           /* warm paper-like background */
+    color: #2f2e2b;
+    font-family: Georgia, "Times New Roman", serif;   /* serif body text */
+    line-height: 1.8;                    /* comfortable reading rhythm */
+    padding: 40px 20px;
+}
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.article {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 40px 45px;
+}
+
+/* ------------------------------------------------------------
+   article-header - different font family + centered alignment
+   ------------------------------------------------------------ */
+.article-header {
+    text-align: center;                  /* centers the heading block */
+    margin-bottom: 28px;
+}
+
+.article-header h1 {
+    font-family: "Trebuchet MS", Arial, sans-serif;   /* sans-serif display font */
+    font-size: 2.2rem;                   /* large heading size */
+    font-weight: 700;                    /* heavy weight for the title */
+    color: #1f3a5f;
+    letter-spacing: 1.5px;               /* slightly spaced-out title letters */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.byline {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 0.95rem;
+    color: #6b6b6b;
+    letter-spacing: 0.3px;
+    margin-top: 8px;
+}
+
+.byline code {
+    background-color: #eef1f5;
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+/* ------------------------------------------------------------
+   .lede - justified alignment demonstrates text-align: justify.
+   The first section also uses ::first-letter and ::first-line,
+   creating instant visual emphasis on the opening paragraph.
+   ------------------------------------------------------------ */
+.lede p {
+    text-align: justify;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+/* ::first-letter - the very first character becomes a large
+   drop-cap style letter in a different weight and color. */
+.lede p::first-letter {
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: #b03a2e;
+    float: left;
+    line-height: 1;
+    padding-right: 8px;
+    padding-top: 6px;
+}
+
+/* ::first-line - the first line is styled as a colored lead-in. */
+.lede p::first-line {
+    font-weight: 700;
+    color: #1f3a5f;
+    letter-spacing: 0.5px;
+}
+
+/* ------------------------------------------------------------
+   .body-copy - larger line-height for readability, moderate font
+   size, and the demo of centered + right alignment variations.
+   ------------------------------------------------------------ */
+.body-copy p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    line-height: 1.9;                    /* airy spacing between lines */
+    margin-bottom: 18px;
+}
+
+/* A gentle alignment variation inside the article */
+.body-copy p:nth-of-type(2) {
+    text-align: left;
+}
+
+.body-copy p:nth-of-type(1) {
+    text-align: left;
+}
+
+.body-copy p:last-of-type {
+    text-align: center;                  /* the closing paragraph is centered */
+    font-style: italic;
+}
+
+/* ------------------------------------------------------------
+   Inline semantic elements - each gets a custom look.
+   ------------------------------------------------------------ */
+
+/* <strong> - bold, colored, with increased weight (900) */
+strong {
+    font-weight: 900;
+    color: #1f3a5f;
+    font-size: 1.1em;
+}
+
+/* <em> - italic but color-shifted and slightly lighter weight for contrast */
+em {
+    font-style: italic;
+    color: #7a3b9e;
+    font-weight: 500;
+}
+
+/* <mark> - soft yellow highlight with rounded corners */
+mark {
+    background-color: #fff3b0;
+    color: #5b4a00;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* ------------------------------------------------------------
+   Footer - small, spaced-out centered text with tracking.
+   ------------------------------------------------------------ */
+.article-footer {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #e3dfd6;
+}
+
+.article-footer p {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;                 /* wide spacing for the sign-off */
+    text-transform: uppercase;
+    color: #8a8578;
+}
+
+/* Distinct data: the description sentence above also uses letter-spacing
+   to visibly separate characters on the byline. */
+.byline {
+    letter-spacing: 0.4px;
+}

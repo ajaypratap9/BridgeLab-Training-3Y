@@ -1,0 +1,161 @@
+/* ============================================================
+   Question 10 - Navigation Bar with Transitions
+   A horizontal responsive navbar built with Flexbox, padding,
+   borders, a hover transition and a media query that stacks the
+   links below 700px screen width.
+   ============================================================ */
+
+/* Reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eef2f7;
+    color: #333333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------------------------------------------------------------
+   NAVBAR
+   Flexbox makes the list a horizontal row; justify-content
+   centers it inside the bar. The bar has its own padding and a
+   bottom border.
+   ------------------------------------------------------------ */
+.navbar {
+    background-color: #2c3e50;
+    padding: 12px 20px;
+    border-bottom: 4px solid #3498db;
+}
+
+.nav-list {
+    display: flex;                 /* horizontal row by default */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------------
+   NAV LINKS
+   padding builds the clickable area around each label; borders
+   give the links a framed look. The transition animates padding,
+   colors and border together so hover feels smooth:
+   transition: all 0.3s ease;
+   ------------------------------------------------------------ */
+.nav-link {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;                 /* generous clickable padding */
+    border: 2px solid transparent;       /* invisible border pre-reserved */
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    /* Hover transition - exactly as required: all, 0.3s, ease */
+    transition: all 0.3s ease;
+}
+
+/* Hover: background fills in, border appears, slight lift */
+.nav-link:hover {
+    background-color: #3498db;
+    border-color: #5dade2;
+    color: #ffffff;
+    padding-bottom: 14px;               /* small "grow" on hover */
+}
+
+/* ------------------------------------------------------------
+   ACTIVE LINK
+   Clearly different: filled green background + green underline,
+   so the current page stands out from the other four links.
+   ------------------------------------------------------------ */
+.nav-link.active {
+    background-color: #27ae60;
+    border-color: #2ecc71;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(39, 174, 96, 0.5);
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------------
+   MAIN CONTENT + FOOTER
+   main grows to fill the middle; footer is pushed to the bottom
+   by the flex column body and centers its text.
+   ------------------------------------------------------------ */
+main {
+    flex: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+main header h1 {
+    font-size: 2.1rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+main header p {
+    font-size: 1.02rem;
+    color: #555555;
+    max-width: 720px;
+    margin: 0 auto 10px auto;
+}
+
+.hint {
+    font-weight: bold;
+    color: #6e2cbf !important;
+}
+
+.hero {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    padding: 35px 30px;
+    margin-top: 30px;
+}
+
+.hero h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #555555;
+}
+
+.site-footer {
+    background-color: #2c3e50;
+    color: #aeb9c5;
+    text-align: center;          /* centered footer text as required */
+    padding: 16px 20px;
+    font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE MEDIA QUERY
+   Below 700px the horizontal Flexbox row (flex-direction: row)
+   switches to a vertical column. Every link then takes the full
+   width and stacks one above the other.
+   ------------------------------------------------------------ */
+@media (max-width: 700px) {
+    .nav-list {
+        flex-direction: column;          /* stack links vertically */
+        gap: 6px;
+        align-items: stretch;            /* full-width links */
+    }
+
+    .nav-link {
+        text-align: center;
+        width: 100%;
+    }
+}

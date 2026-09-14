@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 8 - Box Model Exploration</title>
+    <link rel="stylesheet" href="question8.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>The CSS Box Model</h1>
+            <p>Every element on a web page is a box made of four layers:
+               <code>content</code>, <code>padding</code>, <code>border</code> and
+               <code>margin</code>. The demonstration below shows each layer with a
+               different color.</p>
+        </header>
+
+        <!-- Flexbox centers the whole multi-part demonstration -->
+        <section class="stage">
+
+            <!-- 1. The layered box model diagram -->
+            <div class="box-diagram">
+                <div class="layer-margin">
+                    <p class="layer-label">Margin (yellow area)</p>
+                    <div class="layer-border">
+                        <p class="layer-label">Border (orange ring)</p>
+                        <div class="layer-padding">
+                            <p class="layer-label">Padding (light green)</p>
+                            <div class="layer-content">
+                                <p>Content</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Explanation text next to the diagram -->
+            <div class="explanation">
+                <h2>Inside a box</h2>
+                <dl>
+                    <dt>Content</dt>
+                    <dd>The actual text or image.</dd>
+                    <dt>Padding</dt>
+                    <dd>Space between the content and the border.</dd>
+                    <dt>Border</dt>
+                    <dd>The element's edge — a visible/colored line.</dd>
+                    <dt>Margin</dt>
+                    <dd>Space outside the border separating the box from its neighbors.</dd>
+                </dl>
+            </div>
+
+            <!-- 3. box-sizing comparison -->
+            <div class="sizing-comparison">
+                <h2>box-sizing: the size surprise</h2>
+
+                <div class="comparison-row">
+                    <div class="sizing-card">
+                        <h3>Default (content-box)</h3>
+                        <p>Same width / height is set below, but padding and border
+                           are added ON TOP of that size.</p>
+                        <div class="measure content-box-piece">
+                            <p>200px wide declared</p>
+                        </div>
+                        <p class="result">Measured total ≈ <strong>260px</strong>
+                           wide (200 + padding + border).</p>
+                    </div>
+
+                    <div class="sizing-card">
+                        <h3>box-sizing: border-box</h3>
+                        <p>Padding and border are included <em>inside</em> the declared
+                           size, so the box stays exactly 200px.</p>
+                        <div class="measure border-box-piece">
+                            <p>200px wide declared</p>
+                        </div>
+                        <p class="result">Measured total = exactly <strong>200px</strong>
+                           wide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
