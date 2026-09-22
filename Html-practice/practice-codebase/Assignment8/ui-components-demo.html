@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexusUI — User Interface Components Showcase</title>
+  <!-- Link to separate custom CSS stylesheet -->
+  <link rel="stylesheet" href="ui-components-demo.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">NexusUI Kit</div>
+      <span class="kit-version">Design System v2.4</span>
+    </div>
+  </header>
+
+  <!-- Semantic <main> -->
+  <main class="main">
+    <div class="container">
+      
+      <!-- Intro -->
+      <section class="intro">
+        <span class="badge">Component Library</span>
+        <h1 class="title">Standard UI Components</h1>
+        <p class="subtitle">
+          Demonstrating search bars, interactive buttons, and custom styled select dropdowns with consistent padding, borders, shadows, and accessible :focus/:hover states.
+        </p>
+      </section>
+
+      <!-- 
+        Card-like Container for UI Components:
+        Aligned and structured using Flexbox with soft background gradient.
+      -->
+      <section class="ui-card-container">
+        
+        <!-- Component 1: Search Bar -->
+        <article class="ui-group">
+          <label for="global-search" class="group-label">1. Global Search Bar</label>
+          <div class="search-bar-wrap">
+            <input type="search" id="global-search" class="search-input" placeholder="Search documentation, modules, APIs..." aria-label="Search">
+            <button type="button" class="btn btn-search">Search</button>
+          </div>
+        </article>
+
+        <!-- Component 2: Styled Dropdown Menu (<select>) -->
+        <article class="ui-group">
+          <label for="category-select" class="group-label">2. Category Filter Dropdown</label>
+          <div class="select-wrapper">
+            <select id="category-select" class="custom-select" aria-label="Filter by Category">
+              <option value="" disabled selected>Select Category</option>
+              <option value="web">Web Development</option>
+              <option value="cyber">Cybersecurity</option>
+              <option value="design">Design Systems</option>
+              <option value="data">Data Science</option>
+            </select>
+          </div>
+        </article>
+
+        <!-- Component 3: Button Collection (Search, Submit, Cancel) -->
+        <article class="ui-group">
+          <span class="group-label">3. Standard Action Buttons</span>
+          <div class="action-buttons-wrap">
+            <button type="button" class="btn btn-search-alt">
+              <span>🔍 Search</span>
+            </button>
+            <button type="submit" class="btn btn-submit">
+              <span>✓ Submit</span>
+            </button>
+            <button type="reset" class="btn btn-cancel">
+              <span>✕ Cancel</span>
+            </button>
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 NexusUI Kit. Assignment 8 — Question 7 Demonstration.</p>
+      <p class="footer-note">Crafted with pure HTML5, CSS Flexbox, and CSS Gradients.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

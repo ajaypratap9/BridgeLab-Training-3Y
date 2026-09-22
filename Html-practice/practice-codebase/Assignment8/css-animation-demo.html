@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyframe Motion Lab — CSS Animation Demonstration</title>
+  <!-- Link to separate custom CSS stylesheet -->
+  <link rel="stylesheet" href="css-animation-demo.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">Keyframe Motion Lab</div>
+      <span class="edition-tag">CSS3 @keyframes &amp; Timing Exploration</span>
+    </div>
+  </header>
+
+  <!-- Semantic <main> -->
+  <main class="main container">
+    
+    <!-- Intro -->
+    <section class="intro">
+      <span class="badge">Hardware-Accelerated Motion</span>
+      <h1 class="title">Pure CSS @keyframes Animations</h1>
+      <p class="subtitle">
+        Centered vertically and horizontally with Flexbox. Demonstrating animation-delay, animation-iteration-count, animation-direction, and ease-in-out timing curves.
+      </p>
+    </section>
+
+    <!-- 
+      Flexbox Animation Demonstration Arena:
+      Centers all three animated elements vertically and horizontally.
+    -->
+    <section class="animation-stage">
+      
+      <!-- Element 1: Moving Box (Demonstrating animation-direction: alternate & animation-delay) -->
+      <article class="anim-card">
+        <div class="card-header">
+          <span class="anim-tag">Element 01</span>
+          <h2>Horizontal Slider Box</h2>
+          <p class="anim-param">Demonstrates: <code>animation-direction: alternate;</code> &amp; <code>animation-delay: 0.5s;</code></p>
+        </div>
+        <div class="stage-canvas">
+          <div class="moving-box">
+            <span>Slide</span>
+          </div>
+        </div>
+        <div class="code-box">
+          <code>animation: moveBox 3s ease-in-out infinite alternate; animation-delay: 0.5s;</code>
+        </div>
+      </article>
+
+      <!-- Element 2: Bouncing Ball (Demonstrating animation-direction: alternate & ease-in-out) -->
+      <article class="anim-card">
+        <div class="card-header">
+          <span class="anim-tag">Element 02</span>
+          <h2>Elastic Bouncing Ball</h2>
+          <p class="anim-param">Demonstrates: <code>animation-direction: alternate;</code> &amp; <code>ease-in-out</code></p>
+        </div>
+        <div class="stage-canvas">
+          <div class="bouncing-ball-wrap">
+            <div class="bouncing-ball"></div>
+            <div class="ball-shadow"></div>
+          </div>
+        </div>
+        <div class="code-box">
+          <code>animation: bounceBall 1.2s ease-in-out infinite alternate;</code>
+        </div>
+      </article>
+
+      <!-- Element 3: Pulsing / Color-Changing Text (Demonstrating animation-iteration-count) -->
+      <article class="anim-card">
+        <div class="card-header">
+          <span class="anim-tag">Element 03</span>
+          <h2>Color-Morphing Kinetic Text</h2>
+          <p class="anim-param">Demonstrates: <code>animation-iteration-count: infinite;</code> &amp; hue shifts</p>
+        </div>
+        <div class="stage-canvas">
+          <div class="morph-text-wrap">
+            <span class="color-changing-text">DYNAMIC SPECTRUM</span>
+          </div>
+        </div>
+        <div class="code-box">
+          <code>animation: colorCycle 3.5s ease-in-out infinite alternate; animation-iteration-count: infinite;</code>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Explanatory note -->
+    <section class="summary-section">
+      <article class="summary-card">
+        <h2>Keyframe Timing &amp; Performance Note</h2>
+        <p>
+          By centering animated components with Flexbox rather than fragile absolute coordinate positioning, responsive bounds are preserved. Animating transform properties (<code>translate</code>, <code>scale</code>) rather than margin/top triggers GPU compositing passes, guaranteeing smooth 60fps frame rates.
+        </p>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Keyframe Motion Lab. Assignment 8 — Question 6 Demonstration.</p>
+      <p class="footer-note">Crafted with pure CSS @keyframes, ease-in-out curves, and Flexbox centering.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

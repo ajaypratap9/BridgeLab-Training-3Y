@@ -1,0 +1,237 @@
+/* ==========================================================================
+   responsive-typography.css
+   Topic: Fluid Typography, Relative Units, Viewport Units, clamp() & Line Heights
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.25rem 2rem;
+}
+
+.nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #4f46e5;
+  letter-spacing: -0.02em;
+}
+
+.nav-tag {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+  background-color: #f1f5f9;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* ==========================================================================
+   MAIN CENTERING & BALANCED PADDING
+   ========================================================================== */
+.main {
+  flex: 1;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Typography Hero Block: Centered */
+.typography-hero {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 3.5rem 2.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
+}
+
+.kicker {
+  display: inline-block;
+  color: #4f46e5;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+  background-color: #eef2ff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+}
+
+/* ==========================================================================
+   REQUIRED HEADING:
+   Must strictly use font-size: clamp(1.5rem, 4vw, 3rem);
+   ========================================================================== */
+h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   REQUIRED PARAGRAPH:
+   Must strictly use font-size: clamp(1rem, 2vw, 1.5rem);
+   ========================================================================== */
+p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #475569;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto 2.25rem auto;
+  text-align: center;
+}
+
+/* Optional CTA Button */
+.cta-wrapper {
+  margin-top: 1rem;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: #4f46e5;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-cta:hover {
+  background-color: #4338ca;
+  transform: translateY(-2px);
+}
+
+/* Explanatory Spec Section */
+.details-section {
+  text-align: center;
+}
+
+.spec-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2.25rem;
+}
+
+.spec-card h2 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 1.75rem;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.spec-item {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  text-align: left;
+}
+
+.spec-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 0.35rem;
+}
+
+.spec-item code {
+  display: inline-block;
+  background-color: #e2e8f0;
+  color: #0f172a;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.spec-item p {
+  font-size: 0.875rem !important; /* Contextual explanatory card note */
+  color: #64748b;
+  line-height: 1.5;
+  text-align: left;
+  margin: 0;
+}
+
+/* Footer */
+.footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.875rem;
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   MOBILE MEDIA QUERY: BELOW 700px
+   Adjust line-height, spacing, and padding for optimal mobile reading
+   ========================================================================== */
+@media (max-width: 700px) {
+  .main {
+    padding: 2.5rem 1rem;
+    width: 95%;
+  }
+
+  .typography-hero {
+    padding: 2.25rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Adjust paragraph line-height and margin below 700px */
+  p {
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,239 @@
+/* ==========================================================================
+   responsive-web-design-layout.css
+   Topic: CSS Flexbox Layout, Responsive Navigation, Box Scaling & Media Queries
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   HEADER: FLEXBOX (Logo on Left, Nav on Right)
+   ========================================================================== */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Flexbox aligns logo to the left and navigation to the right */
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #2563eb;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+/* Flexbox navigation list */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #2563eb;
+}
+
+/* ==========================================================================
+   MAIN CONTENT AREA
+   ========================================================================== */
+.main {
+  flex: 1;
+  max-width: 1100px;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+.hero-intro {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.hero-intro h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: #0f172a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-intro p {
+  font-size: 1.15rem;
+  color: #64748b;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   MAIN SECTION: THREE FEATURE BOXES (FLEXBOX HORIZONTAL)
+   ========================================================================== */
+.features-container {
+  /* Flexbox creates horizontal row of 3 feature boxes */
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Individual Feature Box */
+.feature-box {
+  /* Distribute equal flex widths */
+  flex: 1;
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  /* Required transition for smooth hover scaling */
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+/* ==========================================================================
+   HOVER EFFECT: Slightly increase size using transform: scale(...)
+   ========================================================================== */
+.feature-box:hover {
+  /* Slightly increase its size on hover */
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.1), 0 8px 10px -6px rgba(37, 99, 235, 0.1);
+  border-color: #bfdbfe;
+}
+
+.feature-icon {
+  font-size: 2.25rem;
+  margin-bottom: 1.25rem;
+  display: inline-block;
+}
+
+.feature-box h2 {
+  font-size: 1.35rem;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.feature-box p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.feature-link {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.feature-link:hover {
+  text-decoration: underline;
+}
+
+/* About summary */
+.about-summary {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.about-summary h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.about-summary p {
+  color: #64748b;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   FOOTER: CENTERED AT THE BOTTOM
+   ========================================================================== */
+.footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content p {
+  font-size: 0.95rem;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE BEHAVIOR (BELOW 750px)
+   Stacks the three feature boxes vertically
+   ========================================================================== */
+@media (max-width: 750px) {
+  /* Stacks feature boxes vertically */
+  .features-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Header wraps to column on smaller screens */
+  .header-inner {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
+  }
+
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  /* Reduce hover scale slightly for touch targets */
+  .feature-box:hover {
+    transform: scale(1.02);
+  }
+}

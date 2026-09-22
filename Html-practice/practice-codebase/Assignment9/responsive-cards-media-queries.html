@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudServices — Responsive Cards with Media Queries</title>
+  <!-- Link to separate custom CSS file -->
+  <link rel="stylesheet" href="responsive-cards-media-queries.css">
+</head>
+<body>
+
+  <!-- Semantic <header> containing navbar -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">CloudCore</div>
+      <nav class="nav">
+        <ul class="nav-menu">
+          <li><a href="#services" class="active">Services</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Semantic <main> content -->
+  <main class="main">
+    <section class="container" id="services">
+      
+      <!-- Section heading -->
+      <div class="section-header">
+        <span class="badge">Modular Architecture</span>
+        <h1 class="title">Enterprise Cloud Solutions</h1>
+        <p class="subtitle">
+          Demonstrating responsive card layout adapting from 4 columns (Desktop) to 2 columns (Tablet ≤ 900px) to 1 column (Mobile ≤ 600px) using Flexbox and CSS Media Queries.
+        </p>
+      </div>
+
+      <!-- 
+        Flexbox Card Grid Container:
+        - 4 columns on Desktop
+        - 2 columns on Tablet (max-width: 900px)
+        - 1 column on Mobile (max-width: 600px)
+      -->
+      <div class="cards-flex-container">
+        
+        <!-- Card 1 -->
+        <article class="service-card">
+          <div class="card-icon-wrap icon-blue">
+            <span class="icon">☁</span>
+          </div>
+          <h2 class="card-title">Cloud Storage</h2>
+          <p class="card-desc">
+            Distributed object storage with multi-region replication, real-time sync, and millisecond latency guarantees.
+          </p>
+          <div class="card-action">
+            <button type="button" class="card-btn">Deploy Storage</button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="service-card">
+          <div class="card-icon-wrap icon-purple">
+            <span class="icon">🔒</span>
+          </div>
+          <h2 class="card-title">Data Security</h2>
+          <p class="card-desc">
+            Zero-knowledge 256-bit AES cryptographic encryption at rest and in transit with automated key rotation.
+          </p>
+          <div class="card-action">
+            <button type="button" class="card-btn">Audit Security</button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="service-card">
+          <div class="card-icon-wrap icon-green">
+            <span class="icon">📊</span>
+          </div>
+          <h2 class="card-title">AI Analytics</h2>
+          <p class="card-desc">
+            Streaming telemetry processing, predictive cluster autoscaling, and real-time operational observability.
+          </p>
+          <div class="card-action">
+            <button type="button" class="card-btn">View Telemetry</button>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="service-card">
+          <div class="card-icon-wrap icon-orange">
+            <span class="icon">🚀</span>
+          </div>
+          <h2 class="card-title">Global CDN</h2>
+          <p class="card-desc">
+            300+ Edge point-of-presence servers delivering dynamic caching, DDoS mitigation, and high throughput.
+          </p>
+          <div class="card-action">
+            <button type="button" class="card-btn">Configure Edge</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 CloudCore Platform. All rights reserved.</p>
+      <p class="footer-copy">Assignment 9 (Q3) — Flexbox Responsive Cards with Media Queries</p>
+    </div>
+  </footer>
+
+</body>
+</html>

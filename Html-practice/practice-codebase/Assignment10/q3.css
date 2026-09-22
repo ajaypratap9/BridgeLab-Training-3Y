@@ -1,0 +1,25 @@
+/* q3.css — Custom CSS for Product Catalog */
+
+/* Product card hover effect with smooth transition */
+.product-card {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+/* On hover: slight upward movement & stronger shadow */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Fixed height and object-fit for product images to preserve card uniformity */
+.product-img {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.04);
+}

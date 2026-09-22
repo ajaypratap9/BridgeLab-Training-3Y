@@ -1,0 +1,240 @@
+/* ==========================================================================
+   responsive-cards-media-queries.css
+   Topic: Flexbox Card Layout, Media Queries (900px & 600px), Hover Transitions
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.25rem 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #0284c7;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  padding: 4rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #e0f2fe;
+  color: #0284c7;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   DESKTOP: FLEXBOX 4-COLUMN CARDS LAYOUT
+   ========================================================================== */
+.cards-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Equal spacing between cards */
+  gap: 1.5rem;
+}
+
+/* 
+   Card Sizing on Desktop:
+   Four columns = (100% - (3 * 1.5rem gap)) / 4
+*/
+.service-card {
+  flex: 1 1 calc(25% - 1.125rem);
+  background-color: #ffffff;
+  padding: 2.25rem 1.75rem;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  /* Required transition on background-color and transform */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==========================================================================
+   HOVER STATE: Change background color and elevation
+   ========================================================================== */
+.service-card:hover {
+  /* Required: change background color on hover */
+  background-color: #f0fdf4;
+  border-color: #86efac;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px -5px rgba(22, 101, 52, 0.1);
+}
+
+/* Card Elements */
+.card-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon-blue { background-color: #dbeafe; }
+.icon-purple { background-color: #f3e8ff; }
+.icon-green { background-color: #dcfce7; }
+.icon-orange { background-color: #ffedd5; }
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.card-desc {
+  color: #64748b;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  flex-grow: 1; /* Maintains consistent button alignment across cards */
+}
+
+.card-btn {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.card-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Footer */
+.footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+/* ==========================================================================
+   TABLET BREAKPOINT: max-width: 900px
+   Display 2 Columns:
+   [Card 1] [Card 2]
+   [Card 3] [Card 4]
+   ========================================================================== */
+@media (max-width: 900px) {
+  .service-card {
+    /* Two columns: calc(50% - (1 gap / 2)) */
+    flex: 1 1 calc(50% - 0.75rem);
+  }
+}
+
+/* ==========================================================================
+   MOBILE BREAKPOINT: max-width: 600px
+   Display 1 Column:
+   [Card 1]
+   [Card 2]
+   [Card 3]
+   [Card 4]
+   ========================================================================== */
+@media (max-width: 600px) {
+  .service-card {
+    /* One column: 100% full width */
+    flex: 1 1 100%;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Typography — CSS clamp() & Fluid Sizing</title>
+  <!-- Link to separate custom CSS file -->
+  <link rel="stylesheet" href="responsive-typography.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="header">
+    <nav class="nav">
+      <span class="logo">TypeCraft</span>
+      <span class="nav-tag">Fluid Typography Lab</span>
+    </nav>
+  </header>
+
+  <!-- Semantic <main> section centered layout -->
+  <main class="main">
+    <section class="typography-hero">
+      
+      <span class="kicker">CSS Fluid Typography Demonstration</span>
+
+      <!-- 
+        Required Heading <h1>:
+        Styled in CSS strictly with: font-size: clamp(1.5rem, 4vw, 3rem);
+      -->
+      <h1>Fluid Scales with Pure CSS clamp()</h1>
+
+      <!-- 
+        Required Paragraph <p>:
+        Styled in CSS strictly with: font-size: clamp(1rem, 2vw, 1.5rem);
+      -->
+      <p>
+        Modern responsive typography harmoniously adapts across smartphones, tablets, laptops, and ultra-wide desktop monitors without relying on abrupt media query jumps. By unifying minimum constraints, dynamic viewport units (vw), and maximum bounds into CSS clamp(), text smoothly scales in perfect proportionality with screen dimensions.
+      </p>
+
+      <!-- Optional CTA Button -->
+      <div class="cta-wrapper">
+        <a href="#learn-more" class="btn-cta">Explore Fluid Typography Specs</a>
+      </div>
+
+    </section>
+
+    <!-- Explanatory educational card -->
+    <section class="details-section" id="learn-more">
+      <article class="spec-card">
+        <h2>How Mathematical Clamping Works</h2>
+        <div class="spec-grid">
+          <div class="spec-item">
+            <span class="spec-label">Minimum Floor</span>
+            <code>1.5rem (24px)</code>
+            <p>Prevents headers from becoming unreadably tiny on compact mobile viewports.</p>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Preferred Viewport Rate</span>
+            <code>4vw (Dynamic)</code>
+            <p>Scales font sizing at 4% of the user viewport width continuously.</p>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Maximum Ceiling</span>
+            <code>3.0rem (48px)</code>
+            <p>Prevents titles from overflowing or dominating widescreen displays.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <p>&copy; 2026 TypeCraft. Assignment 9 (Q4) — Responsive Typography Demonstration.</p>
+  </footer>
+
+</body>
+</html>

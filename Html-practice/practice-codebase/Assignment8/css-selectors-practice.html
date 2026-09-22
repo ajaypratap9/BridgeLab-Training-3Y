@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Mastery Lab — 8 Core Selectors</title>
+  <!-- Link to separate custom CSS stylesheet -->
+  <link rel="stylesheet" href="css-selectors-practice.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">SelectorCraft</div>
+      <nav class="site-nav">
+        <span class="nav-edition">CSS3 Specificity &amp; Combinators Guide</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Semantic <main> -->
+  <main class="container main-content">
+    
+    <section class="intro">
+      <span class="badge">Reference &amp; Practical Lab</span>
+      <h1 class="page-title">The 8 Essential CSS Selectors</h1>
+      <p class="page-desc">
+        Explore how browsers parse Element, Class, ID, Attribute, Child, Adjacent Sibling, General Sibling, and Descendant selectors to apply granular styling rules.
+      </p>
+    </section>
+
+    <!-- Demonstrations Container -->
+    <section class="selectors-grid">
+
+      <!-- 1. Element Selector -->
+      <article class="demo-box" id="demo-element">
+        <div class="box-badge">01. Element Selector</div>
+        <h2>Targeting Base HTML Tags</h2>
+        <p>
+          This paragraph is styled by an element selector. Element selectors directly match any HTML node sharing the tag name across the document.
+        </p>
+        <div class="code-snippet">
+          <code>p { color: #334155; }</code>
+        </div>
+      </article>
+
+      <!-- 2. Class Selector -->
+      <article class="demo-box">
+        <div class="box-badge">02. Class Selector</div>
+        <h2>Reusable Style Abstractions</h2>
+        <p>Standard paragraph without special classes.</p>
+        <p class="highlight">
+          This paragraph has the class <strong>.highlight</strong>. Class selectors begin with a period and can be applied across multiple elements.
+        </p>
+        <div class="code-snippet">
+          <code>.highlight { background: #fef08a; color: #854d0e; }</code>
+        </div>
+      </article>
+
+      <!-- 3. ID Selector -->
+      <article class="demo-box">
+        <div class="box-badge">03. ID Selector</div>
+        <h2>Unique Document Identity</h2>
+        <p id="special">
+          This element is styled via <strong>#special</strong>. ID selectors begin with a hash and should match only a single unique element per HTML document.
+        </p>
+        <div class="code-snippet">
+          <code>#special { color: #dc2626; font-weight: 700; }</code>
+        </div>
+      </article>
+
+      <!-- 4. Attribute Selector -->
+      <article class="demo-box">
+        <div class="box-badge">04. Attribute Selector</div>
+        <h2>Attribute-Specific Targeting</h2>
+        <p>Inspects HTML element attributes and values:</p>
+        <div class="form-sample">
+          <input type="text" placeholder="Standard text input" aria-label="Standard input">
+          <input type="email" placeholder="input[type='email'] with custom border" aria-label="Email input">
+        </div>
+        <div class="code-snippet">
+          <code>input[type="email"] { border-color: #2563eb; }</code>
+        </div>
+      </article>
+
+      <!-- 5. Child Combinator > -->
+      <article class="demo-box">
+        <div class="box-badge">05. Child Combinator (&gt;)</div>
+        <h2>Direct Children Only</h2>
+        <div class="parent">
+          <p>Direct child paragraph (&lt;div class="parent"&gt; &gt; &lt;p&gt;) — Styled Green.</p>
+          <div class="nested-wrapper">
+            <p>Nested grandchild paragraph inside a wrapper — NOT styled by direct child combinator.</p>
+          </div>
+        </div>
+        <div class="code-snippet">
+          <code>.parent &gt; p { color: #16a34a; font-weight: 700; }</code>
+        </div>
+      </article>
+
+      <!-- 6. Adjacent Sibling Combinator + -->
+      <article class="demo-box">
+        <div class="box-badge">06. Adjacent Sibling (+)</div>
+        <h2>Immediately Following Sibling</h2>
+        <h2 class="adjacent-heading">Adjacent Anchor Heading</h2>
+        <p>This paragraph immediately follows the heading (h2 + p) — Top margin eliminated and emphasized in indigo.</p>
+        <p>Second sibling paragraph — NOT adjacent to the h2 element.</p>
+        <div class="code-snippet">
+          <code>h2.adjacent-heading + p { color: #4338ca; margin-top: 0; }</code>
+        </div>
+      </article>
+
+      <!-- 7. General Sibling Combinator ~ -->
+      <article class="demo-box">
+        <div class="box-badge">07. General Sibling (~)</div>
+        <h2>All Subsequent Siblings</h2>
+        <h2 class="general-heading">General Anchor Heading</h2>
+        <p>First subsequent sibling paragraph.</p>
+        <p>Second subsequent sibling paragraph.</p>
+        <p>All paragraphs following .general-heading share muted slate styling.</p>
+        <div class="code-snippet">
+          <code>h2.general-heading ~ p { color: #64748b; font-style: italic; }</code>
+        </div>
+      </article>
+
+      <!-- 8. Descendant Selector (Space) -->
+      <article class="demo-box">
+        <div class="box-badge">08. Descendant Selector (Space)</div>
+        <h2>Any Depth Descendants</h2>
+        <div class="card">
+          <div class="card-inner">
+            <p>
+              Deeply nested paragraph inside <code>.card p</code>. Matches regardless of nesting depth within the parent container.
+            </p>
+          </div>
+        </div>
+        <div class="code-snippet">
+          <code>.card p { line-height: 1.8; color: #0284c7; }</code>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 SelectorCraft. Assignment 8 — Question 4 Demonstration.</p>
+      <p class="footer-note">Complete demonstration of 8 CSS Selector types with detailed code commentary.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

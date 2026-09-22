@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NatureVista — Image Showcase Layout</title>
+  <!-- Link to separate custom CSS stylesheet -->
+  <link rel="stylesheet" href="image-showcase.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">NatureVista</div>
+      <nav class="nav">
+        <span class="gallery-tag">Wilderness Photography Archive</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Semantic <main> -->
+  <main class="main container">
+    
+    <!-- Hero intro -->
+    <section class="intro">
+      <span class="badge">Visual Art Gallery</span>
+      <h1 class="title">Breathtaking Earth Landscapes</h1>
+      <p class="subtitle">
+        Hover over each landscape photograph to observe dynamic scaling with <code>transform: scale(1.1);</code> and a semi-transparent overlay darkening effect.
+      </p>
+    </section>
+
+    <!-- 
+      Image Showcase Layout:
+      Built using CSS Grid. Below 700px, all images stack into one column.
+    -->
+    <section class="showcase-grid">
+
+      <!-- Image 1 -->
+      <figure class="showcase-item">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=700&auto=format&fit=crop&q=80" 
+               alt="Majestic mountain peak at sunset" loading="lazy">
+        </div>
+        <figcaption class="caption">
+          <h3>Mountain Escape</h3>
+          <p>Dolomites, Alpine Peaks</p>
+        </figcaption>
+      </figure>
+
+      <!-- Image 2 -->
+      <figure class="showcase-item">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop&q=80" 
+               alt="Tropical azure ocean coastline" loading="lazy">
+        </div>
+        <figcaption class="caption">
+          <h3>Azure Coastline</h3>
+          <p>Pacific Ocean Shoreline</p>
+        </figcaption>
+      </figure>
+
+      <!-- Image 3 -->
+      <figure class="showcase-item">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=700&auto=format&fit=crop&q=80" 
+               alt="Dense green woodland canopy" loading="lazy">
+        </div>
+        <figcaption class="caption">
+          <h3>Emerald Forest</h3>
+          <p>Black Forest Reserve</p>
+        </figcaption>
+      </figure>
+
+      <!-- Image 4 -->
+      <figure class="showcase-item">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=700&auto=format&fit=crop&q=80" 
+               alt="Golden sand desert dunes under sunlight" loading="lazy">
+        </div>
+        <figcaption class="caption">
+          <h3>Golden Dunes</h3>
+          <p>Sahara Desert Expanse</p>
+        </figcaption>
+      </figure>
+
+      <!-- Image 5 -->
+      <figure class="showcase-item">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&auto=format&fit=crop&q=80" 
+               alt="Snowy mountain peaks under starry night sky" loading="lazy">
+        </div>
+        <figcaption class="caption">
+          <h3>Starlit Summits</h3>
+          <p>Matterhorn Night Panorama</p>
+        </figcaption>
+      </figure>
+
+      <!-- Image 6 -->
+      <figure class="showcase-item">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=700&auto=format&fit=crop&q=80" 
+               alt="Powerful waterfall flowing into rocky river" loading="lazy">
+        </div>
+        <figcaption class="caption">
+          <h3>Cascading Waters</h3>
+          <p>Nordic Glacial Valley</p>
+        </figcaption>
+      </figure>
+
+    </section>
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 NatureVista Gallery. Assignment 8 — Question 3 Demonstration.</p>
+      <p class="footer-note">CSS Grid Showcase with transform: scale(1.1) and pseudo-element darkening overlay.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

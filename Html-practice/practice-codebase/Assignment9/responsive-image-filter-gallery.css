@@ -1,0 +1,253 @@
+/* ==========================================================================
+   responsive-image-filter-gallery.css
+   Topic: CSS Grid, CSS Filters, Hover Effects, Transitions & Media Queries
+   ========================================================================== */
+
+/* Universal box sizing reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page baseline styling */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styling */
+.site-header {
+  background-color: #1e293b;
+  border-bottom: 1px solid #334155;
+  padding: 1.25rem 1.5rem;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: -0.02em;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #38bdf8;
+}
+
+/* Main content wrapper */
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  width: 90%;
+  margin: 2.5rem auto;
+}
+
+.intro-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  color: #f8fafc;
+  margin-bottom: 0.75rem;
+}
+
+.section-desc {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #94a3b8;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   CSS GRID GALLERY LAYOUT
+   Automatically adjusts columns based on available container width
+   ========================================================================== */
+.gallery {
+  display: grid;
+  /* Required CSS Grid column template: repeat(auto-fit, minmax(200px, 1fr)) */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.75rem;
+}
+
+/* Gallery Item Card */
+.gallery-item {
+  background-color: #1e293b;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image wrapper preventing overflow during zoom */
+.image-wrapper {
+  overflow: hidden;
+  height: 220px;
+  background-color: #0f172a;
+}
+
+/* Base Image Styling with smooth transitions */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Smooth transition for filter and scale transform */
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* ==========================================================================
+   CSS FILTERS APPLIED TO EACH ITEM
+   ========================================================================== */
+
+/* 1. Blur Filter */
+.filter-blur img {
+  filter: blur(4px);
+}
+
+/* 2. Grayscale Filter */
+.filter-grayscale img {
+  filter: grayscale(100%);
+}
+
+/* 3. Sepia Filter */
+.filter-sepia img {
+  filter: sepia(100%);
+}
+
+/* 4. Brightness Filter (reduced exposure) */
+.filter-brightness img {
+  filter: brightness(55%);
+}
+
+/* 5. Contrast Filter (elevated dynamic range) */
+.filter-contrast img {
+  filter: contrast(200%);
+}
+
+/* 6. Hue-Rotate Filter */
+.filter-hue img {
+  filter: hue-rotate(120deg);
+}
+
+/* ==========================================================================
+   HOVER STATE
+   Removes the CSS filter and smoothly scales the image
+   ========================================================================== */
+.gallery-item:hover img {
+  /* Remove filter back to normal photograph */
+  filter: none;
+  /* Subtle scale transform */
+  transform: scale(1.05);
+}
+
+/* Caption block below image */
+.caption {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.caption-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #334155;
+  color: #38bdf8;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+}
+
+.caption h3 {
+  font-size: 1.15rem;
+  color: #f1f5f9;
+  margin-bottom: 0.35rem;
+}
+
+.caption p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-top: auto;
+}
+
+/* Footer styling */
+.site-footer {
+  background-color: #1e293b;
+  border-top: 1px solid #334155;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-container p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.footer-subtext {
+  font-size: 0.825rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS
+   Below 600px, display all 6 images in a single column
+   ========================================================================== */
+@media (max-width: 600px) {
+  /* Forces single-column gallery on small screens */
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-list {
+    justify-content: center;
+  }
+
+  .image-wrapper {
+    height: 200px;
+  }
+}

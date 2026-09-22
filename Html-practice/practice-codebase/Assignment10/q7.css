@@ -1,0 +1,21 @@
+/* q7.css — Custom CSS for Task Tracker */
+
+/* Cursor pointer on list item labels */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Subtle hover interaction on task items */
+.list-group-item-action {
+  transition: background-color 0.2s ease;
+}
+
+.list-group-item-action:hover {
+  background-color: #f8faff;
+}
+
+/* Enhancing badge appearance */
+.badge {
+  letter-spacing: 0.02rem;
+  font-weight: 600;
+}

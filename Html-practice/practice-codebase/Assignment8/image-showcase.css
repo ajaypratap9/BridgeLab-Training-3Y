@@ -1,0 +1,243 @@
+/* ==========================================================================
+   image-showcase.css
+   Topic: CSS Grid Image Showcase, Hover Scaling & Pseudo-element Dark Overlay
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #0b1120;
+  color: #e2e8f0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #0f172a;
+  border-bottom: 1px solid #1e293b;
+  padding: 1.25rem 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: -0.02em;
+}
+
+.gallery-tag {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  background-color: #1e293b;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 3.5rem 0;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  color: #f8fafc;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: #94a3b8;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+.subtitle code {
+  color: #38bdf8;
+  background-color: #1e293b;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+}
+
+/* ==========================================================================
+   CSS GRID: 6 IMAGES SHOWCASE LAYOUT (3 COLUMNS ON DESKTOP)
+   ========================================================================== */
+.showcase-grid {
+  display: grid;
+  /* 3 equal columns on desktop */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Figure Container */
+.showcase-item {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.showcase-item:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+/* ==========================================================================
+   IMAGE WRAPPER & DARK OVERLAY PSEUDO-ELEMENT
+   ========================================================================== */
+.image-wrapper {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+/* Base Image with required transform transition */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Smooth transition for hover scaling */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 
+   SEMI-TRANSPARENT DARK OVERLAY:
+   Constructed using the ::after pseudo-element.
+   Initially transparent (opacity: 0).
+*/
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* Dark semi-transparent shade */
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   REQUIRED HOVER EFFECTS:
+   1. Image scales up by 10% using transform: scale(1.1);
+   2. Dark overlay becomes visible (opacity: 1)
+   ========================================================================== */
+.showcase-item:hover .image-wrapper img {
+  /* Scale up by 10% */
+  transform: scale(1.1);
+}
+
+.showcase-item:hover .image-wrapper::after {
+  /* Darken image with visible overlay */
+  opacity: 1;
+}
+
+/* Figcaption details */
+.caption {
+  padding: 1.25rem 1.5rem;
+  background-color: #1e293b;
+  border-top: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.caption h3 {
+  font-size: 1.2rem;
+  color: #f8fafc;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.caption p {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+/* Footer */
+.footer {
+  background-color: #0f172a;
+  border-top: 1px solid #1e293b;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERY: BELOW 700px
+   All images must stack in one column
+   ========================================================================== */
+@media (max-width: 700px) {
+  /* Enforce single-column grid on mobile */
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .image-wrapper {
+    height: 220px;
+  }
+}

@@ -1,0 +1,39 @@
+/* q10.css — Custom CSS for Travel Agency Showcase */
+
+/* Consistent Carousel Slide Height and Object Fitting */
+.carousel-slide-img {
+  height: 520px;
+  object-fit: cover;
+  filter: brightness(0.88);
+}
+
+@media (max-width: 768px) {
+  .carousel-slide-img {
+    height: 360px;
+  }
+}
+
+/* Glassmorphism effect for carousel caption */
+.carousel-caption {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  max-width: 650px;
+  bottom: 2rem;
+  left: 3rem;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* Custom rounded corners for progress bar */
+.progress {
+  border-radius: 9999px;
+  background-color: #e2e8f0;
+  overflow: hidden;
+}

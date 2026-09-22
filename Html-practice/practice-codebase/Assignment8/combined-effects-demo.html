@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FXStudio — Combined CSS Effects Demonstration</title>
+  <!-- Link to separate custom CSS stylesheet -->
+  <link rel="stylesheet" href="combined-effects-demo.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">FXStudio</div>
+      <span class="tagline">Micro-Interaction &amp; State Choreography</span>
+    </div>
+  </header>
+
+  <!-- Semantic <main> -->
+  <main class="main container">
+    
+    <!-- Intro -->
+    <section class="intro">
+      <span class="badge">Orchestrated Effects</span>
+      <h1 class="title">Combined CSS Transitions, Transforms &amp; Shadows</h1>
+      <p class="subtitle">
+        Demonstrating unified CSS property transitions where <code>:hover</code> triggers subtle scale expansion and shadow blooms, <code>:focus</code> establishes accessible rings, and <code>:active</code> delivers mechanical depression.
+      </p>
+    </section>
+
+    <!-- 
+      Flexbox Container:
+      Distributes multiple cards and buttons evenly across the page.
+    -->
+    <section class="cards-flex-row">
+
+      <!-- Card 1: Cloud Architecture -->
+      <article class="interactive-card">
+        <div class="card-icon-wrap icon-blue">
+          <span class="icon">☁</span>
+        </div>
+        <h2 class="card-title">Cloud Mesh</h2>
+        <p class="card-desc">
+          Automated edge computing network routing traffic across distributed data centers with zero configuration.
+        </p>
+        <!-- Combined Button -->
+        <button type="button" class="demo-button btn-blue">
+          <span>Deploy Cluster</span>
+        </button>
+      </article>
+
+      <!-- Card 2: Security Engine -->
+      <article class="interactive-card">
+        <div class="card-icon-wrap icon-purple">
+          <span class="icon">🛡</span>
+        </div>
+        <h2 class="card-title">Sentinel Shield</h2>
+        <p class="card-desc">
+          Continuous cryptographic identity verification, behavioral anomaly telemetry, and intrusion defense.
+        </p>
+        <!-- Combined Button -->
+        <button type="button" class="demo-button btn-purple">
+          <span>Enable Sentinel</span>
+        </button>
+      </article>
+
+      <!-- Card 3: Realtime Analytics -->
+      <article class="interactive-card">
+        <div class="card-icon-wrap icon-emerald">
+          <span class="icon">⚡</span>
+        </div>
+        <h2 class="card-title">Stream Engine</h2>
+        <p class="card-desc">
+          Ultra-low latency event streaming engine processing petabytes of telemetry records in sub-second intervals.
+        </p>
+        <!-- Combined Button -->
+        <button type="button" class="demo-button btn-emerald">
+          <span>Launch Pipeline</span>
+        </button>
+      </article>
+
+    </section>
+
+    <!-- Architecture details -->
+    <section class="details-section">
+      <article class="details-card">
+        <h2>Transitions &amp; Transforms Mechanics</h2>
+        <p>
+          Each component encapsulates <code>transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);</code>. When hovered, <code>transform: scale(1.05);</code> scales the element without reflowing sibling nodes, while <code>box-shadow</code> creates elevation realism. Clicking applies <code>:active { transform: scale(0.98); }</code> for tactile feedback.
+        </p>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 FXStudio. Assignment 8 — Question 9 Demonstration.</p>
+      <p class="footer-note">Combining pseudo-classes (:hover, :focus, :active), transforms, transitions, and shadows.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

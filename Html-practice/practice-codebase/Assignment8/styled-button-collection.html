@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ButtonKit — Styled Button Collection</title>
+  <!-- Link to separate custom CSS stylesheet -->
+  <link rel="stylesheet" href="styled-button-collection.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">ButtonKit Design System</div>
+      <span class="tag">UI Component Library</span>
+    </div>
+  </header>
+
+  <!-- Semantic <main> -->
+  <main class="main container">
+    
+    <!-- Intro -->
+    <section class="intro">
+      <span class="badge">Interactive State Styles</span>
+      <h1 class="title">Production-Grade Button Collection</h1>
+      <p class="desc">
+        Explore Primary, Secondary, Outline, and Disabled button styles crafted with pure CSS Flexbox alignment, custom hover lifts, tactile active presses, and accessible focus rings.
+      </p>
+    </section>
+
+    <!-- 
+      Flexbox Button Collection Container:
+      Demonstrates equal spacing, responsive wrapping, and state transitions.
+    -->
+    <section class="button-collection-card">
+      <h2 class="card-heading">Standard Action Tiers</h2>
+      <p class="card-subtext">Click, hover, focus, or tab through each button to inspect states.</p>
+
+      <div class="buttons-flex-row">
+        <!-- 1. Primary Button -->
+        <button type="button" class="btn btn-primary">
+          <span>Primary Action</span>
+        </button>
+
+        <!-- 2. Secondary Button -->
+        <button type="button" class="btn btn-secondary">
+          <span>Secondary Action</span>
+        </button>
+
+        <!-- 3. Outline Button -->
+        <button type="button" class="btn btn-outline">
+          <span>Outline Action</span>
+        </button>
+
+        <!-- 4. Disabled Button -->
+        <button type="button" class="btn btn-primary" disabled>
+          <span>Disabled State</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- State Explanation Breakdown -->
+    <section class="states-grid">
+      <article class="state-card">
+        <h3>:hover State</h3>
+        <p>Lifts the button by -2px, enriches box-shadow, and smoothly interpolates background color via transitions.</p>
+      </article>
+
+      <article class="state-card">
+        <h3>:active State</h3>
+        <p>Depresses the button with <code>transform: translateY(1px);</code>, giving tactile mechanical tactile response.</p>
+      </article>
+
+      <article class="state-card">
+        <h3>:focus State</h3>
+        <p>Displays an accessible <code>outline: 3px solid #93c5fd;</code> for keyboard tab navigation compliant with WCAG.</p>
+      </article>
+
+      <article class="state-card">
+        <h3>:disabled State</h3>
+        <p>Enforces <code>opacity: 0.5; cursor: not-allowed;</code> and prevents hover elevation or transform gestures.</p>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 ButtonKit Design System. Assignment 8 — Question 5 Demonstration.</p>
+      <p class="footer-note">Crafted with Flexbox, CSS box model properties, and accessible pseudo-classes.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

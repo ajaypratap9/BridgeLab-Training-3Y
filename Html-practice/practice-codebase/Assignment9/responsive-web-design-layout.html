@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaStudio — Responsive Web Design with Flexbox</title>
+  <!-- Link to separate custom CSS file -->
+  <link rel="stylesheet" href="responsive-web-design-layout.css">
+</head>
+<body>
+
+  <!-- Semantic <header> containing logo on left and navigation on right via Flexbox -->
+  <header class="header">
+    <div class="header-inner">
+      <!-- Left: Logo / Company Name -->
+      <div class="logo">
+        <a href="#">NovaStudio</a>
+      </div>
+
+      <!-- Right: Navigation links -->
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Semantic <main> container -->
+  <main id="home" class="main">
+    
+    <!-- Hero Introduction -->
+    <section class="hero-intro">
+      <h1>Crafting High-Impact Digital Experiences</h1>
+      <p>
+        NovaStudio designs accessible, lightning-fast digital software solutions. We leverage CSS Flexbox for adaptive alignment across modern devices.
+      </p>
+    </section>
+
+    <!-- 
+      Main Section: Three Feature Boxes
+      Arranged horizontally on desktop using Flexbox.
+      Below 750px, stacks vertically via media query.
+    -->
+    <section class="features-section" id="services">
+      <div class="features-container">
+        
+        <!-- Feature Box 1: Fast Performance -->
+        <article class="feature-box">
+          <div class="feature-icon">⚡</div>
+          <h2>Fast Performance</h2>
+          <p>
+            Zero bloated dependencies. Optimized asset compression, lean DOM trees, and accelerated rendering times guarantee exceptional Lighthouse audit scores.
+          </p>
+          <a href="#" class="feature-link">Explore Speed Metrics &rarr;</a>
+        </article>
+
+        <!-- Feature Box 2: Responsive Design -->
+        <article class="feature-box">
+          <div class="feature-icon">📱</div>
+          <h2>Responsive Design</h2>
+          <p>
+            Fluid flexbox viewports and adaptive media queries ensure flawless readability and touch accessibility across mobile phones, tablets, and 4K displays.
+          </p>
+          <a href="#" class="feature-link">View Viewport Specs &rarr;</a>
+        </article>
+
+        <!-- Feature Box 3: Modern UI -->
+        <article class="feature-box">
+          <div class="feature-icon">🎨</div>
+          <h2>Modern UI</h2>
+          <p>
+            Clean aesthetics, balanced visual hierarchy, contemporary typography, and micro-interactions elevate end-user satisfaction and conversion metrics.
+          </p>
+          <a href="#" class="feature-link">Discover Components &rarr;</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Additional Content Section -->
+    <section class="about-summary" id="about">
+      <h2>Engineering with Precision</h2>
+      <p>
+        By utilizing CSS3 Flexbox layout primitives (flex-direction, justify-content, align-items, and gap), our layouts reconfigure themselves seamlessly without brittle position hacks or heavy framework overhead.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Semantic <footer> centered at the bottom -->
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <p>&copy; 2026 NovaStudio Digital Agency. All rights reserved.</p>
+      <p class="footer-note">Assignment 9 (Q2) — Flexbox Responsive Web Design Layout</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Responsive Design Principles — CSS Grid & Hover Gradients</title>
+  <!-- Link to separate custom CSS file -->
+  <link rel="stylesheet" href="responsive-design-principles-summary.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">ResponsiveFoundations</div>
+      <span class="edition">Modern Web Engineering</span>
+    </div>
+  </header>
+
+  <!-- Semantic <main> -->
+  <main class="main">
+    <div class="container">
+      
+      <!-- Section Intro -->
+      <section class="section-intro">
+        <span class="badge">Fundamental Concepts</span>
+        <h1 class="title">The 3 Core Principles of Responsive Design</h1>
+        <p class="subtitle">
+          Hover over each principle box to trigger smooth gradient backgrounds and dynamic text color transitions. Built with pure CSS Grid converting to single-column below 600px.
+        </p>
+      </section>
+
+      <!-- 
+        CSS Grid 3-Column Container (Desktop)
+        Converts to 1 column below 600px
+      -->
+      <section class="principles-grid">
+        
+        <!-- Box 1: Fluid Layouts -->
+        <article class="principle-box">
+          <div class="box-icon">🌊</div>
+          <h2 class="box-title">Fluid Layouts</h2>
+          <p class="box-def">
+            Layouts that adapt naturally to different viewport sizes by utilizing proportional percentages and maximum boundary constraints instead of rigid pixel widths.
+          </p>
+          <div class="code-container">
+            <div class="code-label">CSS Implementation</div>
+            <pre><code>/* Fluid proportional container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+}</code></pre>
+          </div>
+        </article>
+
+        <!-- Box 2: Flexible Media -->
+        <article class="principle-box">
+          <div class="box-icon">🖼</div>
+          <h2 class="box-title">Flexible Media</h2>
+          <p class="box-def">
+            Images, videos, and canvas graphics that scale proportionally within their containing elements, preventing viewport overflow and preserving aspect ratios.
+          </p>
+          <div class="code-container">
+            <div class="code-label">CSS Implementation</div>
+            <pre><code>/* Responsive image constraints */
+img {
+    max-width: 100%;
+    height: auto;
+}</code></pre>
+          </div>
+        </article>
+
+        <!-- Box 3: Breakpoints -->
+        <article class="principle-box">
+          <div class="box-icon">📱</div>
+          <h2 class="box-title">Breakpoints</h2>
+          <p class="box-def">
+            Strategic viewport trigger widths where CSS rules adjust structural orientation, column counts, and font scales to accommodate device ergonomics.
+          </p>
+          <div class="code-container">
+            <div class="code-label">CSS Implementation</div>
+            <pre><code>/* Media query breakpoint */
+@media (max-width: 700px) {
+    .sidebar {
+        display: none;
+    }
+}</code></pre>
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 ResponsiveFoundations. Assignment 9 (Q9) — Responsive Design Principles Summary.</p>
+      <p class="footer-note">Crafted with pure HTML5, CSS Grid, and CSS transitions.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

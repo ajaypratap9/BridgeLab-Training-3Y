@@ -1,0 +1,301 @@
+/* ==========================================================================
+   styled-button-collection.css
+   Topic: Styled Button Collection — Flexbox, Transitions, Transforms & States
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.25rem 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #2563eb;
+  letter-spacing: -0.02em;
+}
+
+.tag {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 4rem 0;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.desc {
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* Card Wrapper */
+.button-collection-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.card-heading {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+}
+
+.card-subtext {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ==========================================================================
+   FLEXBOX: EQUAL SPACING BETWEEN BUTTONS & RESPONSIVE WRAPPING
+   ========================================================================== */
+.buttons-flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Equal spacing between buttons */
+}
+
+/* ==========================================================================
+   BASE BUTTON STYLING (SHARED PROPERTIES)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.85rem 1.85rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  /* Smooth transitions for all state changes */
+  transition: background-color 0.25s ease, 
+              color 0.25s ease, 
+              border-color 0.25s ease, 
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s ease;
+}
+
+/* ==========================================================================
+   1. PRIMARY BUTTON
+   ========================================================================== */
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:not(:disabled):hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+}
+
+/* ==========================================================================
+   2. SECONDARY BUTTON
+   ========================================================================== */
+.btn-secondary {
+  background-color: #475569;
+  color: #ffffff;
+  border-color: #475569;
+  box-shadow: 0 4px 10px rgba(71, 85, 105, 0.2);
+}
+
+.btn-secondary:not(:disabled):hover {
+  background-color: #334155;
+  border-color: #334155;
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 8px 18px rgba(71, 85, 105, 0.3);
+}
+
+/* ==========================================================================
+   3. OUTLINE BUTTON
+   ========================================================================== */
+.btn-outline {
+  background-color: transparent;
+  color: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn-outline:not(:disabled):hover {
+  background-color: #2563eb; /* Changes background color on hover */
+  color: #ffffff;            /* Changes text color on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+}
+
+/* ==========================================================================
+   REQUIRED ACTIVE STATE:
+   Uses :active to show the button being pressed down mechanically
+   ========================================================================== */
+.btn:not(:disabled):active {
+  /* Depress button upon mouse click */
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   REQUIRED FOCUS STATE:
+   Clearly demonstrates accessible outline for keyboard navigation
+   ========================================================================== */
+.btn:focus {
+  /* Accessible focus outline */
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   REQUIRED DISABLED STATE:
+   Clearly demonstrates opacity: 0.5 and cursor: not-allowed
+   ========================================================================== */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* State explanation grid */
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.state-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.state-card h3 {
+  font-size: 1.1rem;
+  color: #2563eb;
+  margin-bottom: 0.4rem;
+}
+
+.state-card p {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.state-card code {
+  color: #0f172a;
+  background-color: #f1f5f9;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+}
+
+/* Footer */
+.footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+/* Responsive adjustment for small devices */
+@media (max-width: 600px) {
+  .buttons-flex-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

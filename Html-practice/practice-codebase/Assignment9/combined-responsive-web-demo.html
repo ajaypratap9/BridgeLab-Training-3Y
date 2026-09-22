@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniCSS — Combined Responsive Web Demonstration</title>
+  <!-- Link to separate custom CSS file -->
+  <link rel="stylesheet" href="combined-responsive-web-demo.css">
+</head>
+<body>
+
+  <!-- Semantic <header> using Flexbox for logo and navigation -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark">◈</span> OmniCSS
+      </div>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#explanation">Concepts</a></li>
+          <li><a href="#cheatsheet">Preview</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Semantic <main> area using CSS Grid for the 3 major sections -->
+  <main class="main container">
+    
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <span class="pill-badge">Full-Spectrum CSS3 Showcase</span>
+      <h1>Responsive Web Design Master Demo</h1>
+      <p>Combining CSS Grid, Flexbox, Fluid Clamping, Media Queries, Filter Layers, and Keyframe Animations.</p>
+    </section>
+
+    <!-- 
+      MAIN CONTENT GRID (Desktop: 3 Major Sections arranged with CSS Grid)
+      Below 700px: All 3 main sections stack vertically
+    -->
+    <div class="main-sections-grid">
+
+      <!-- ====================================================================
+           SECTION 1: Image Gallery (CSS Grid + Filters)
+           ==================================================================== -->
+      <section class="content-section gallery-section" id="gallery">
+        <div class="section-badge">Section 1</div>
+        <h2>Filter Image Gallery</h2>
+        <p class="section-intro-text">Responsive CSS Grid gallery demonstrating filter effects and hover restoration.</p>
+        
+        <div class="mini-gallery-grid">
+          <figure class="mini-card filter-sepia">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&auto=format&fit=crop&q=80" 
+                 alt="Sepia historic architecture" loading="lazy">
+            <figcaption>Sepia Architecture</figcaption>
+          </figure>
+
+          <figure class="mini-card filter-bw">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&auto=format&fit=crop&q=80" 
+                 alt="Grayscale serene lake" loading="lazy">
+            <figcaption>Grayscale Nature</figcaption>
+          </figure>
+
+          <figure class="mini-card filter-contrast">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&auto=format&fit=crop&q=80" 
+                 alt="High contrast forest" loading="lazy">
+            <figcaption>High Contrast</figcaption>
+          </figure>
+
+          <figure class="mini-card filter-blur">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&auto=format&fit=crop&q=80" 
+                 alt="Soft blurred garden" loading="lazy">
+            <figcaption>Gaussian Blur</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 2: Responsive Design Explanation
+           ==================================================================== -->
+      <section class="content-section explanation-section" id="explanation">
+        <div class="section-badge">Section 2</div>
+        <h2>Responsive Design Architecture</h2>
+        
+        <article class="expl-block">
+          <h3>1. What is Responsive Design?</h3>
+          <p>
+            Responsive web design is an architectural methodology ensuring web layouts fluidly react to the user's viewport, device pixel ratio, and orientation without degrading usability or requiring separate URLs.
+          </p>
+        </article>
+
+        <article class="expl-block">
+          <h3>2. Why is it Essential?</h3>
+          <p>
+            Over 60% of worldwide web traffic originates from mobile devices. Responsive layouts optimize SEO rank, reduce bounce rates, accelerate page load times, and guarantee unified brand accessibility.
+          </p>
+        </article>
+
+        <article class="expl-block">
+          <h3>3. How Media Queries Work</h3>
+          <p>
+            CSS Media Queries evaluate conditional device parameters (e.g. <code>@media (max-width: 700px)</code>) to conditionally reconfigure grid columns, flex directions, font scalings, and padding hierarchies on the fly.
+          </p>
+        </article>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 3: Cheat Sheet Preview
+           ==================================================================== -->
+      <section class="content-section cheatsheet-preview-section" id="cheatsheet">
+        <div class="section-badge">Section 3</div>
+        <h2>Cheat Sheet Quick Reference</h2>
+        <p class="section-intro-text">Rapid recap of fundamental responsive CSS layout primitives.</p>
+
+        <ul class="concept-preview-list">
+          <li class="concept-item">
+            <span class="concept-name">Flexbox</span>
+            <span class="concept-desc">One-dimensional flow for alignment, space distribution, and dynamic wrapping.</span>
+          </li>
+          <li class="concept-item">
+            <span class="concept-name">CSS Grid</span>
+            <span class="concept-desc">Two-dimensional track system executing complex row and column alignments.</span>
+          </li>
+          <li class="concept-item">
+            <span class="concept-name">Media Queries</span>
+            <span class="concept-desc">Conditional CSS rule sets activated upon viewport breakpoint thresholds.</span>
+          </li>
+          <li class="concept-item">
+            <span class="concept-name">clamp()</span>
+            <span class="concept-desc">Mathematical clamping: <code>clamp(min, preferred, max)</code> for fluid typography.</span>
+          </li>
+          <li class="concept-item">
+            <span class="concept-name">Filters</span>
+            <span class="concept-desc">Direct GPU graphic transformations including blur, grayscale, and brightness.</span>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Semantic <footer> containing Email, Phone, and Location -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>OmniCSS Laboratory</h3>
+        <p>A comprehensive research platform demonstrating accessible, zero-dependency responsive frontend development.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Information</h4>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> support@omnicss.edu</li>
+          <li><strong>Phone:</strong> +1 (800) 555-0199</li>
+          <li><strong>Location:</strong> Silicon Valley Tech Hub, California, USA</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Assignment Details</h4>
+        <p class="small-text">Assignment 9 (Q7) — Combined Responsive Web Demo.</p>
+        <p class="small-text">&copy; 2026 OmniCSS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

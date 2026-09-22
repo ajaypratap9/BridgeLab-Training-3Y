@@ -1,0 +1,332 @@
+/* ==========================================================================
+   tooltip-demonstration.css
+   Topic: Pure CSS-Only Tooltips with position: absolute & opacity transitions
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.site-header {
+  background-color: #1e293b;
+  border-bottom: 1px solid #334155;
+  padding: 1.25rem 2rem;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: -0.02em;
+}
+
+.nav-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  background-color: #334155;
+  color: #94a3b8;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  max-width: 1100px;
+  width: 90%;
+  margin: 3.5rem auto;
+}
+
+.intro-section {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.page-title {
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  color: #f8fafc;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.page-subtitle {
+  color: #94a3b8;
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   FLEXBOX SHOWCASE CONTAINER: Centering all tooltip examples
+   ========================================================================== */
+.tooltips-showcase-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Tooltip Demo Card */
+.tooltip-card {
+  flex: 1 1 300px;
+  max-width: 340px;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  padding: 2.25rem 1.75rem;
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #38bdf8;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.tooltip-card h3 {
+  font-size: 1.25rem;
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.demo-wrapper {
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* ==========================================================================
+   TOOLTIP CONTAINER & CORE CSS-ONLY TOOLTIP IMPLEMENTATION
+   ========================================================================== */
+
+/* Establishes relative coordinate context for absolute tooltip positioning */
+.tooltip-container {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* 
+   TOOLTIP STYLING:
+   - Positioned above the target element using position: absolute
+   - Initially hidden via opacity: 0 and visibility: hidden
+   - Smooth 0.3s ease-in-out transition requirement
+*/
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px); /* Positioned directly above the hovered element */
+  left: 50%;
+  transform: translateX(-50%) translateY(6px); /* Initial slight downward offset for enter animation */
+  background-color: #0284c7;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 0.55rem 0.95rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.4), 0 0 12px rgba(56, 189, 248, 0.25);
+  pointer-events: none; /* Prevents tooltip from capturing hover events */
+  z-index: 50;
+
+  /* Initially hidden */
+  opacity: 0;
+  visibility: hidden;
+
+  /* Required 0.3s ease-in-out transition */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Little downward arrow pointer on tooltip */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #0284c7 transparent transparent transparent;
+}
+
+/* 
+   HOVER STATE:
+   Triggers tooltip opacity transition to 1 and slides into final rest position
+*/
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Target element styles */
+.term-badge {
+  background-color: #0b1329;
+  color: #38bdf8;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px dashed #0284c7;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.tooltip-container:hover .term-badge {
+  background-color: #1e3a8a;
+  border-color: #38bdf8;
+}
+
+.icon-circle {
+  font-size: 2rem;
+  background-color: #0b1329;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #334155;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.tooltip-container:hover .icon-circle {
+  border-color: #38bdf8;
+  transform: scale(1.08);
+}
+
+.action-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(2, 132, 199, 0.4);
+}
+
+/* Architecture section */
+.architecture-section {
+  text-align: center;
+}
+
+.architecture-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  padding: 2.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.architecture-card h2 {
+  font-size: 1.35rem;
+  color: #f8fafc;
+  margin-bottom: 0.75rem;
+}
+
+.architecture-card p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.architecture-card code {
+  color: #38bdf8;
+  background-color: #0f172a;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.3rem;
+  font-family: monospace;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #1e293b;
+  border-top: 1px solid #334155;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .tooltip {
+    white-space: normal;
+    width: 220px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

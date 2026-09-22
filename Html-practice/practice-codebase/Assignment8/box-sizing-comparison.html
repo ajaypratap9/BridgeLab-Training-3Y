@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Model Lab — Box-Sizing Comparison</title>
+  <!-- Link to separate custom CSS stylesheet -->
+  <link rel="stylesheet" href="box-sizing-comparison.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">BoxModel Lab</div>
+      <span class="edition">CSS3 Box Model Diagnostics</span>
+    </div>
+  </header>
+
+  <!-- Semantic <main> -->
+  <main class="main container">
+    
+    <!-- Intro -->
+    <section class="intro">
+      <span class="badge">CSS Core Principles</span>
+      <h1 class="title">content-box vs. border-box</h1>
+      <p class="subtitle">
+        Both comparison boxes below share the exact same declared <code>width: 320px;</code>, <code>padding: 25px;</code>, and <code>border: 6px solid;</code>. Observe how box-sizing fundamentally alters their final rendered physical footprints.
+      </p>
+    </section>
+
+    <!-- 
+      Comparison Layout:
+      Centers both boxes side-by-side using Flexbox on desktop.
+      Stacks vertically on smaller screens.
+    -->
+    <section class="boxes-comparison-container">
+
+      <!-- Box 1: Default Box-Sizing Behavior (content-box) -->
+      <article class="box-card box-content-box">
+        <div class="box-badge-tag tag-orange">Default: content-box</div>
+        <h2>Box 1 (content-box)</h2>
+        <div class="spec-row">
+          <span>Declared Width:</span>
+          <strong>320px</strong>
+        </div>
+        <div class="spec-row">
+          <span>Padding (Left + Right):</span>
+          <strong>25px + 25px = 50px</strong>
+        </div>
+        <div class="spec-row">
+          <span>Border (Left + Right):</span>
+          <strong>6px + 6px = 12px</strong>
+        </div>
+        <div class="spec-row total-highlight">
+          <span>Total Rendered Width:</span>
+          <strong>320 + 50 + 12 = 382px!</strong>
+        </div>
+        <p class="box-annotation">
+          Notice how padding and border expand OUTWARD, swelling the box 62px beyond the declared width!
+        </p>
+      </article>
+
+      <!-- Box 2: border-box -->
+      <article class="box-card box-border-box">
+        <div class="box-badge-tag tag-blue">Modern: border-box</div>
+        <h2>Box 2 (border-box)</h2>
+        <div class="spec-row">
+          <span>Declared Width:</span>
+          <strong>320px</strong>
+        </div>
+        <div class="spec-row">
+          <span>Padding (Left + Right):</span>
+          <strong>25px + 25px = 50px</strong>
+        </div>
+        <div class="spec-row">
+          <span>Border (Left + Right):</span>
+          <strong>6px + 6px = 12px</strong>
+        </div>
+        <div class="spec-row total-highlight">
+          <span>Total Rendered Width:</span>
+          <strong>Strictly 320px!</strong>
+        </div>
+        <p class="box-annotation">
+          Padding and borders are absorbed INWARD into the declared width. Total footprint never exceeds 320px.
+        </p>
+      </article>
+
+    </section>
+
+    <!-- Comprehensive Explanatory Guide -->
+    <section class="explanation-section">
+      <article class="expl-card">
+        <h2>Mathematical Mechanics of the CSS Box Model</h2>
+        
+        <div class="expl-grid">
+          <div class="expl-col">
+            <h3>What is content-box?</h3>
+            <p>
+              In the browser's default <code>content-box</code> model, the <code>width</code> property defines only the width of the raw content area. Any subsequent padding and borders are added <em>on top</em> of the declared width:
+            </p>
+            <div class="math-formula">
+              <code>Total Width = width + padding-left + padding-right + border-left + border-right</code>
+            </div>
+          </div>
+
+          <div class="expl-col">
+            <h3>What is border-box?</h3>
+            <p>
+              Under <code>box-sizing: border-box;</code>, the declared <code>width</code> defines the total exterior dimension including borders and padding. The content area automatically shrinks inward to fit:
+            </p>
+            <div class="math-formula">
+              <code>Total Width = declared width (padding &amp; border accommodated internally)</code>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 BoxModel Lab. Assignment 8 — Question 8 Demonstration.</p>
+      <p class="footer-note">Crafted with pure HTML5, CSS Flexbox centering, and contrasting diagnostic themes.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

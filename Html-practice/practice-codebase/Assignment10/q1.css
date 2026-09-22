@@ -1,0 +1,21 @@
+/* q1.css — Custom CSS for Company Landing Page */
+
+/* Custom smooth scrolling across section anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Subtle elevation transition on service cards */
+.service-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Hero section subtle gradient background */
+.hero-section {
+  background: linear-gradient(180deg, #f8f9fa 0%, #eef2f7 100%);
+}

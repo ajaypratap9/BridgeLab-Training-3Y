@@ -1,0 +1,255 @@
+/* ==========================================================================
+   responsive-design-principles-summary.css
+   Topic: Core Responsive Principles, CSS Grid, Hover Gradient & Text Transition
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.25rem 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0284c7;
+  letter-spacing: -0.02em;
+}
+
+.edition {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 4rem 0;
+}
+
+.section-intro {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #e0f2fe;
+  color: #0284c7;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: #64748b;
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   CSS GRID: 3 PRINCIPLE BOXES (DESKTOP)
+   [Fluid Layouts] [Flexible Media] [Breakpoints]
+   ========================================================================== */
+.principles-grid {
+  display: grid;
+  /* Required 3 columns on desktop */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Principle Box */
+.principle-box {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 2.25rem 1.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  /* Smooth CSS transition for hover gradient, text color & lift */
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s ease, 
+              border-color 0.35s ease,
+              background 0.4s ease,
+              color 0.35s ease;
+}
+
+.box-icon {
+  font-size: 2.25rem;
+  margin-bottom: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.box-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.box-def {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+  transition: color 0.3s ease;
+}
+
+/* Code Container */
+.code-container {
+  background-color: #0f172a;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.code-label {
+  background-color: #1e293b;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.code-container pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.code-container code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.825rem;
+  color: #38bdf8;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   REQUIRED HOVER EFFECT:
+   Apply a background gradient & change text color
+   ========================================================================== */
+.principle-box:hover {
+  /* Dynamic vibrant gradient background on hover */
+  background: linear-gradient(135deg, #1e3a8a 0%, #0284c7 100%);
+  border-color: #38bdf8;
+  /* Change general text color on hover */
+  color: #ffffff;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px -10px rgba(2, 132, 199, 0.35);
+}
+
+.principle-box:hover .box-icon {
+  transform: scale(1.15);
+}
+
+.principle-box:hover .box-title {
+  /* Change title text color to pure white on hover */
+  color: #ffffff;
+}
+
+.principle-box:hover .box-def {
+  /* Change definition text color to light pastel on hover */
+  color: #e0f2fe;
+}
+
+.principle-box:hover .code-container {
+  background-color: rgba(15, 23, 42, 0.85);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.principle-box:hover .code-label {
+  background-color: rgba(30, 41, 59, 0.9);
+  color: #7dd3fc;
+}
+
+.principle-box:hover .code-container code {
+  color: #f0fdf4;
+}
+
+/* Footer */
+.footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+/* ==========================================================================
+   MOBILE BREAKPOINT: BELOW 600px
+   Convert everything into a single-column layout
+   ========================================================================== */
+@media (max-width: 600px) {
+  /* Single-column layout on mobile screens */
+  .principles-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

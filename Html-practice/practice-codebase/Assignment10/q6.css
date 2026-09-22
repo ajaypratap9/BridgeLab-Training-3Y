@@ -1,0 +1,33 @@
+/* q6.css — Custom CSS for Notifications Dashboard */
+
+/* Styling for the Summary Well section */
+.summary-well {
+  background-color: #f8f9fa;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* Subtle border card shadow */
+.shadow-xs {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Alert styling touch-up */
+.alert {
+  border-left-width: 5px;
+}
+
+.alert-success {
+  border-left-color: #198754;
+}
+
+.alert-info {
+  border-left-color: #0dcaf0;
+}
+
+.alert-danger {
+  border-left-color: #dc3545;
+}
+
+.alert-warning {
+  border-left-color: #ffc107;
+}

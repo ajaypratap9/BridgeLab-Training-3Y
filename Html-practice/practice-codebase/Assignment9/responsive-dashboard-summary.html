@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive CSS Dashboard — Grid Layout & Dashboard Architecture</title>
+  <!-- Link to separate custom CSS file -->
+  <link rel="stylesheet" href="responsive-dashboard-summary.css">
+</head>
+<body>
+
+  <!-- 
+    CSS Grid Dashboard Container:
+    - Header on top
+    - Sidebar on left, Main Content on right (Desktop)
+    - Below 750px: Sidebar moves to top, cards stack vertically
+  -->
+  <div class="dashboard-grid-wrapper">
+
+    <!-- Dashboard Header -->
+    <header class="dash-header">
+      <div class="dash-header-content">
+        <div class="dash-branding">
+          <span class="brand-icon">⚡</span>
+          <h1 class="brand-title">Responsive CSS Dashboard</h1>
+        </div>
+        <div class="user-profile">
+          <span class="status-indicator"></span>
+          <span class="user-name">Engineering Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside class="dash-sidebar">
+      <nav class="sidebar-nav">
+        <span class="sidebar-label">Navigation Menu</span>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#dashboard" class="nav-link active">
+              <span class="nav-icon">📊</span>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#filters" class="nav-link">
+              <span class="nav-icon">🎨</span>
+              <span>Filters</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#typography" class="nav-link">
+              <span class="nav-icon">✍</span>
+              <span>Typography</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#media-queries" class="nav-link">
+              <span class="nav-icon">📐</span>
+              <span>Media Queries</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#cheatsheet" class="nav-link">
+              <span class="nav-icon">📑</span>
+              <span>Cheat Sheet</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area containing 4 Dashboard Cards -->
+    <main class="dash-main" id="dashboard">
+      
+      <!-- Dashboard Subheader / Overview -->
+      <section class="overview-bar">
+        <div>
+          <h2 class="overview-title">System Metrics & Module Overview</h2>
+          <p class="overview-desc">Continuous monitoring of responsive layouts, viewport shifts, and graphic shader performance.</p>
+        </div>
+        <div class="system-status">
+          <span class="status-badge">Layout: Fully Fluid</span>
+        </div>
+      </section>
+
+      <!-- 
+        Main Cards Grid:
+        - 2x2 grid on Desktop
+        - 1 column stacked below 750px
+      -->
+      <section class="cards-grid">
+
+        <!-- Card 1: Filters -->
+        <article class="dash-card" id="filters">
+          <div class="card-head">
+            <span class="card-tag tag-purple">GPU Shaders</span>
+            <span class="card-meta">Active: 6 Presets</span>
+          </div>
+          <h3 class="card-title">1. CSS Filters Engine</h3>
+          <p class="card-explanation">
+            Applies non-destructive graphical modifications including blur, grayscale, brightness, contrast, and hue-rotation directly through hardware GPU composition.
+          </p>
+          <div class="card-info-box">
+            <span class="info-label">Key Property:</span>
+            <code>filter: grayscale(100%) contrast(120%);</code>
+          </div>
+          <a href="responsive-image-filter-gallery.html" class="card-link">View Filter Gallery Demo &rarr;</a>
+        </article>
+
+        <!-- Card 2: Typography -->
+        <article class="dash-card" id="typography">
+          <div class="card-head">
+            <span class="card-tag tag-blue">Dynamic Scale</span>
+            <span class="card-meta">Viewport Linked</span>
+          </div>
+          <h3 class="card-title">2. Fluid Typography</h3>
+          <p class="card-explanation">
+            Eliminates awkward breakpoint jumps by calculating fluid font scales bounded between safe minimum and maximum values using the CSS <code>clamp()</code> function.
+          </p>
+          <div class="card-info-box">
+            <span class="info-label">Key Property:</span>
+            <code>font-size: clamp(1.5rem, 4vw, 3rem);</code>
+          </div>
+          <a href="responsive-typography.html" class="card-link">View Typography Demo &rarr;</a>
+        </article>
+
+        <!-- Card 3: Media Queries -->
+        <article class="dash-card" id="media-queries">
+          <div class="card-head">
+            <span class="card-tag tag-green">Adaptive Rules</span>
+            <span class="card-meta">Threshold: 750px</span>
+          </div>
+          <h3 class="card-title">3. Media Queries</h3>
+          <p class="card-explanation">
+            Evaluates display device characteristics such as viewport width, orientation, and resolution to trigger optimized structural layout reconfigurations.
+          </p>
+          <div class="card-info-box">
+            <span class="info-label">Key Property:</span>
+            <code>@media (max-width: 750px) { ... }</code>
+          </div>
+          <a href="responsive-cards-media-queries.html" class="card-link">View Cards & Breakpoints &rarr;</a>
+        </article>
+
+        <!-- Card 4: Cheat Sheet Links -->
+        <article class="dash-card" id="cheatsheet">
+          <div class="card-head">
+            <span class="card-tag tag-orange">Knowledge Base</span>
+            <span class="card-meta">4 Modules</span>
+          </div>
+          <h3 class="card-title">4. Cheat Sheet & Reference</h3>
+          <p class="card-explanation">
+            Comprehensive quick reference index containing production-tested implementation syntax for CSS Grid, Flexbox, Fluid Viewports, and Transform states.
+          </p>
+          <div class="card-info-box">
+            <span class="info-label">Key Property:</span>
+            <code>display: grid; grid-template-columns: ...</code>
+          </div>
+          <a href="responsive-css-cheat-sheet.html" class="card-link">Open Complete Cheat Sheet &rarr;</a>
+        </article>
+
+      </section>
+
+      <!-- Semantic <footer> -->
+      <footer class="dash-footer">
+        <p>&copy; 2026 Responsive CSS Dashboard. Assignment 9 (Q10) — Complete Grid Dashboard Summary.</p>
+        <p class="dash-footer-note">Crafted with pure HTML5 semantic landmarks and two-dimensional CSS Grid.</p>
+      </footer>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

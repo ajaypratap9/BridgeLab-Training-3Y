@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexDesk — Enterprise Support Portal</title>
+  <!-- Link to separate custom CSS stylesheet -->
+  <link rel="stylesheet" href="mini-ui-layout.css">
+</head>
+<body>
+
+  <!-- Semantic <header> containing website logo and simple navigation -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-symbol">▲</span> ApexDesk
+      </div>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="#support" class="active">Support Portal</a></li>
+          <li><a href="#kb">Knowledge Base</a></li>
+          <li><a href="#status">System Status</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Semantic <main> section -->
+  <main class="main container" id="support">
+    
+    <!-- Hero introduction -->
+    <section class="intro">
+      <span class="badge">Priority Helpdesk</span>
+      <h1 class="page-title">Submit a Technical Inquiry</h1>
+      <p class="page-subtitle">
+        Have questions regarding cloud deployment, billing, or security auditing? Fill out the ticket form below.
+      </p>
+    </section>
+
+    <!-- 
+      MAIN CONTENT CARD:
+      Contains small image, realistic inquiry form, and action buttons.
+      Aligned with Flexbox.
+    -->
+    <section class="main-card">
+      
+      <!-- Left / Top Column: Representative Image and Context -->
+      <article class="card-sidebar">
+        <!-- Small image with border-radius, appropriate sizing, and alt text -->
+        <div class="agent-avatar-wrap">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80" 
+               alt="Customer Success Engineer Sarah ready to assist" class="agent-avatar">
+        </div>
+        <h2 class="agent-name">Sarah Chen</h2>
+        <span class="agent-role">Principal Solutions Engineer</span>
+        <p class="agent-bio">
+          Our specialized cloud reliability team typically resolves critical architecture inquiries within 2 hours.
+        </p>
+        <div class="support-status">
+          <span class="status-dot"></span>
+          <span>Support Desk Online</span>
+        </div>
+      </article>
+
+      <!-- Right Column: Interactive Support Form -->
+      <article class="card-form-area">
+        <form action="#" method="POST" class="inquiry-form">
+          
+          <!-- Name Field -->
+          <div class="form-group">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="e.g. Ajay Pratap Singh" required>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="emailAddr" class="form-label">Email Address</label>
+            <input type="email" id="emailAddr" name="emailAddr" class="form-input" placeholder="e.g. ajay@example.com" required>
+          </div>
+
+          <!-- Subject Field -->
+          <div class="form-group">
+            <label for="subjectLine" class="form-label">Subject</label>
+            <input type="text" id="subjectLine" name="subjectLine" class="form-input" placeholder="Brief summary of inquiry" required>
+          </div>
+
+          <!-- Message Field -->
+          <div class="form-group">
+            <label for="messageText" class="form-label">Message Details</label>
+            <textarea id="messageText" name="messageText" class="form-textarea" rows="4" placeholder="Describe your technical challenge, error codes, or environment..." required></textarea>
+          </div>
+
+          <!-- Buttons: Submit and Reset/Cancel -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-submit">Submit Ticket</button>
+            <button type="reset" class="btn btn-reset">Cancel / Reset</button>
+          </div>
+
+        </form>
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- Semantic <footer> containing copyright and contact information -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-info">
+        <p class="copyright">&copy; 2026 ApexDesk Cloud Technologies Inc. All rights reserved.</p>
+        <p class="contact-details">Inquiries: support@apexdesk.io | Phone: +1 (800) 555-APEX | San Francisco, CA</p>
+      </div>
+      <p class="footer-sub">Assignment 8 — Question 10 Complete Mini UI Layout.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

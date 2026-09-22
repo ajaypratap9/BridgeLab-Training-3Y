@@ -1,0 +1,290 @@
+/* ==========================================================================
+   css-selectors-practice.css
+   Topic: Practical Demonstration of 8 Essential CSS Selector Types
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.25rem 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.nav-edition {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Main */
+.main-content {
+  flex: 1;
+  padding: 3.5rem 0;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #e0f2fe;
+  color: #0284c7;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.page-title {
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.page-desc {
+  color: #64748b;
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* Grid Layout for Selector Demos */
+.selectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.demo-box {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.box-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2563eb;
+  background-color: #eff6ff;
+  padding: 0.25rem 0.65rem;
+  border-radius: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.demo-box h2 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   1. ELEMENT SELECTOR
+   Matches all paragraph elements directly based on HTML tag name
+   ========================================================================== */
+p {
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   2. CLASS SELECTOR
+   Matches any element possessing the specified class attribute
+   ========================================================================== */
+.highlight {
+  background-color: #fef08a;
+  color: #854d0e;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #eab308;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   3. ID SELECTOR
+   Matches the single unique element possessing the designated id attribute
+   ========================================================================== */
+#special {
+  color: #dc2626;
+  font-weight: 700;
+  background-color: #fef2f2;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fecaca;
+}
+
+/* ==========================================================================
+   4. ATTRIBUTE SELECTOR
+   Matches elements containing specific attributes or exact attribute values
+   ========================================================================== */
+.form-sample input {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  border: 1px solid #cbd5e1;
+}
+
+/* Selects only input elements whose type attribute equals "email" */
+input[type="email"] {
+  border-color: #2563eb;
+  background-color: #f0f9ff;
+  outline: 2px solid rgba(37, 99, 235, 0.2);
+}
+
+/* ==========================================================================
+   5. CHILD COMBINATOR (>)
+   Selects only paragraph elements that are IMMEDIATE (direct) children of .parent
+   ========================================================================== */
+.parent > p {
+  color: #16a34a;
+  font-weight: 700;
+  background-color: #f0fdf4;
+  padding: 0.65rem;
+  border-radius: 0.4rem;
+  border-left: 3px solid #16a34a;
+}
+
+.nested-wrapper {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f8fafc;
+  border-radius: 0.4rem;
+}
+
+/* ==========================================================================
+   6. ADJACENT SIBLING COMBINATOR (+)
+   Selects the paragraph element that IMMEDIATELY succeeds h2.adjacent-heading
+   ========================================================================== */
+h2.adjacent-heading + p {
+  color: #4338ca;
+  font-weight: 600;
+  margin-top: 0;
+  background-color: #eef2ff;
+  padding: 0.65rem;
+  border-radius: 0.4rem;
+  border-left: 3px solid #4338ca;
+}
+
+/* ==========================================================================
+   7. GENERAL SIBLING COMBINATOR (~)
+   Selects ALL sibling paragraphs that follow h2.general-heading
+   ========================================================================== */
+h2.general-heading ~ p {
+  color: #64748b;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   8. DESCENDANT SELECTOR (Space)
+   Selects ANY paragraph nested at ANY depth inside a .card container
+   ========================================================================== */
+.card p {
+  line-height: 1.8;
+  color: #0284c7;
+  font-weight: 500;
+  background-color: #f0f9ff;
+  padding: 0.75rem;
+  border-radius: 0.4rem;
+  border: 1px solid #bae6fd;
+}
+
+/* Code Snippet Box */
+.code-snippet {
+  background-color: #0f172a;
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  margin-top: auto;
+  overflow-x: auto;
+}
+
+.code-snippet code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  color: #38bdf8;
+  white-space: nowrap;
+}
+
+/* Footer */
+.footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+  .selectors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

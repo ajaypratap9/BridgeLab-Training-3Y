@@ -1,0 +1,377 @@
+/* ==========================================================================
+   pseudo-classes-demo.css
+   Demonstrating CSS Pseudo-Classes: :hover, :focus, :active, and :nth-child()
+   ========================================================================== */
+
+/* Universal Box Model Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & Navigation */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #2563eb;
+  letter-spacing: -0.02em;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #2563eb;
+}
+
+/* Main Content Wrapper */
+.main-content {
+  flex: 1;
+  max-width: 1240px;
+  width: 92%;
+  margin: 3rem auto;
+}
+
+.intro-section {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.main-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.main-description {
+  color: #64748b;
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   FLEXBOX LAYOUT: Placing demonstrations neatly in one row on large screens
+   ========================================================================== */
+.demos-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Individual Demo Card */
+.demo-card {
+  flex: 1 1 0; /* Equal width distribution across columns */
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.demo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  margin-bottom: 1.5rem;
+}
+
+.card-header h2 {
+  font-size: 1.2rem;
+  color: #0f172a;
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.state-pill {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 0.35rem;
+}
+
+.state-hover { background-color: #dbeafe; color: #1d4ed8; }
+.state-focus { background-color: #fef3c7; color: #b45309; }
+.state-active { background-color: #fee2e2; color: #b91c1c; }
+.state-nth { background-color: #e0e7ff; color: #4338ca; }
+
+/* Interactive Showcase Area */
+.interactive-area {
+  min-height: 120px;
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   REQUIRED SELECTOR 1: :hover
+   Applies styles when the mouse cursor hovers over the element
+   ========================================================================== */
+.demo-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+/* On hover: changes background color and text color */
+.demo-link:hover {
+  color: #ffffff;
+  background: #2563eb;
+  border-color: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* ==========================================================================
+   REQUIRED SELECTOR 2: :focus
+   Applies styles when the input field receives keyboard or click focus
+   ========================================================================== */
+.demo-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: #1e293b;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* On focus: visible outline and subtle focus ring */
+.demo-input:focus {
+  outline: 3px solid #93c5fd;
+  border-color: #2563eb;
+  background-color: #ffffff;
+}
+
+/* ==========================================================================
+   REQUIRED SELECTOR 3: :active
+   Applies styles while the user is actively clicking / pressing the button
+   ========================================================================== */
+.demo-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.25);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* On active: depress button using transform: scale(0.95) */
+.demo-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 3px rgba(220, 38, 38, 0.4);
+}
+
+/* ==========================================================================
+   REQUIRED SELECTOR 4: :nth-child()
+   Styles specific child items based on structural index
+   ========================================================================== */
+.demo-list {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.demo-list li {
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+}
+
+/* Target 2nd child in the list */
+.demo-list li:nth-child(2) {
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 700;
+  border-color: #93c5fd;
+}
+
+/* Target 4th child in the list */
+.demo-list li:nth-child(4) {
+  background: #e0e7ff;
+  color: #4338ca;
+  font-weight: 700;
+  border-color: #a5b4fc;
+}
+
+/* Explanation details */
+.card-explanation {
+  margin-top: auto;
+}
+
+.explanation-text {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.code-preview {
+  background-color: #0f172a;
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  overflow-x: auto;
+}
+
+.code-preview code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  color: #38bdf8;
+  white-space: nowrap;
+}
+
+/* Reference box */
+.reference-box {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2.25rem;
+  text-align: center;
+}
+
+.reference-box h2 {
+  font-size: 1.4rem;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.reference-box p {
+  color: #64748b;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  text-align: center;
+}
+
+.footer-sub {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN: Media Queries
+   Allows cards to wrap on tablets and stack vertically on mobile screens
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .demos-flex-row {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .demo-card {
+    flex: 1 1 calc(50% - 0.75rem);
+    min-width: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  .demos-flex-row {
+    flex-direction: column;
+  }
+
+  .demo-card {
+    flex: 1 1 100%;
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}

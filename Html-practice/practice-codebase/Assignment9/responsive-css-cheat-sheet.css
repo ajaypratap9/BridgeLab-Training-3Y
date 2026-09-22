@@ -1,0 +1,240 @@
+/* ==========================================================================
+   responsive-css-cheat-sheet.css
+   Topic: Educational Cheat Sheet, CSS Grid, Code Previews & Media Queries
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #1e293b;
+  border-bottom: 1px solid #334155;
+  padding: 1.25rem 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: -0.02em;
+}
+
+.edition-tag {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  background-color: #334155;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 4rem 0;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: #f8fafc;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: #94a3b8;
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   CSS GRID CHEATSHEET LAYOUT (DESKTOP: 2 COLUMNS)
+   ========================================================================== */
+.cheatsheet-grid {
+  display: grid;
+  /* Required: 2 columns on desktop */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Topic Box / Card */
+.topic-box {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 1.25rem;
+  padding: 2.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  /* Required transition for hover interactions */
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* ==========================================================================
+   REQUIRED INTERACTION: Hover Effect & Transition
+   ========================================================================== */
+.topic-box:hover {
+  transform: translateY(-6px);
+  border-color: #38bdf8;
+  background-color: #243248;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.4), 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
+.topic-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.topic-icon {
+  font-size: 2rem;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+}
+
+.topic-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #38bdf8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.topic-title {
+  font-size: 1.35rem;
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.topic-desc {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Code Snippet Container */
+.code-block {
+  background-color: #0b1120;
+  border: 1px solid #1e293b;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.code-header {
+  background-color: #162032;
+  padding: 0.45rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #1e293b;
+}
+
+.code-block pre {
+  padding: 1.25rem;
+  overflow-x: auto;
+}
+
+.code-block code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  color: #7dd3fc;
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+  background-color: #1e293b;
+  border-top: 1px solid #334155;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-note {
+  font-size: 0.825rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+/* ==========================================================================
+   MOBILE BREAKPOINT: BELOW 700px
+   Convert the layout into stacked rows
+   ========================================================================== */
+@media (max-width: 700px) {
+  /* Converts 2-column grid into 1-column stacked rows */
+  .cheatsheet-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .topic-box {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}

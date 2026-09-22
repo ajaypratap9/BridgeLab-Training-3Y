@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS-Only Tooltips Demonstration</title>
+  <!-- Link to separate custom CSS stylesheet -->
+  <link rel="stylesheet" href="tooltip-demonstration.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">TooltipStudio</div>
+      <nav class="nav">
+        <span class="nav-tag">Zero-JS Tooltip Architecture</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Semantic <main> -->
+  <main class="main-content">
+    <section class="intro-section">
+      <span class="badge">Pure CSS3 Micro-Interactions</span>
+      <h1 class="page-title">CSS-Only Contextual Tooltips</h1>
+      <p class="page-subtitle">
+        Hover over the interactive icons, technical terms, and action buttons below to reveal absolute-positioned tooltips with smooth 0.3s opacity transitions.
+      </p>
+    </section>
+
+    <!-- 
+      Flexbox Showcase Container:
+      Centers all tooltip examples both vertically and horizontally.
+    -->
+    <section class="tooltips-showcase-container">
+      
+      <!-- Example 1: Technical Acronym Tooltip -->
+      <article class="tooltip-card">
+        <span class="card-category">Keyword Term</span>
+        <h3>Technical Glossary</h3>
+        <p class="card-desc">Hover over the highlighted acronym to inspect its full expansion.</p>
+        
+        <div class="demo-wrapper">
+          <div class="tooltip-container">
+            <span class="term-badge">HTML5</span>
+            <span class="tooltip">HyperText Markup Language (Version 5 Standard)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Example 2: Icon Indicator Tooltip -->
+      <article class="tooltip-card">
+        <span class="card-category">System Icon</span>
+        <h3>Status Indicators</h3>
+        <p class="card-desc">Hover over the security shield icon to view server encryption status.</p>
+        
+        <div class="demo-wrapper">
+          <div class="tooltip-container">
+            <span class="icon-circle" aria-label="Security Shield">🛡️</span>
+            <span class="tooltip">TLS 1.3 End-to-End Cryptographic Encryption Active</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Example 3: Action Button Tooltip -->
+      <article class="tooltip-card">
+        <span class="card-category">Call to Action</span>
+        <h3>Interactive Button</h3>
+        <p class="card-desc">Hover over the download button to preview file package details.</p>
+        
+        <div class="demo-wrapper">
+          <div class="tooltip-container">
+            <button type="button" class="action-btn">Download SDK</button>
+            <span class="tooltip">Download v4.2.0 • Linux/macOS/Win (64-bit tarball, 14.8 MB)</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Technical explanation section -->
+    <section class="architecture-section">
+      <article class="architecture-card">
+        <h2>How CSS-Only Tooltips Function</h2>
+        <p>
+          The parent <code>.tooltip-container</code> establishes a positioning context with <code>position: relative;</code>. The tooltip child is taken out of normal document flow with <code>position: absolute;</code> and positioned above the anchor. By setting default <code>opacity: 0;</code> and switching to <code>opacity: 1;</code> on <code>:hover</code>, pure CSS achieves a fluid tooltip with zero JavaScript overhead.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2026 TooltipStudio. Assignment 8 — Question 2 Demonstration.</p>
+      <p class="footer-note">CSS-Only Tooltips with position: absolute &amp; 0.3s ease-in-out transitions.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

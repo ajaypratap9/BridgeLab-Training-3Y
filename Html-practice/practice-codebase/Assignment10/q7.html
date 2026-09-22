@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Task Tracker — Productivity Dashboard</title>
+  <!-- Bootstrap 5 CDN CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Custom CSS for Question 7 -->
+  <link rel="stylesheet" href="q7.css">
+</head>
+<body class="bg-light">
+
+  <!-- Semantic <header> containing navbar and Header Badge Counter -->
+  <header class="bg-white border-bottom py-3 sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <!-- Application Title -->
+        <a class="navbar-brand fw-bold fs-4 text-primary" href="#">My Task Tracker</a>
+
+        <!-- Header Badge Counter: "Pending Tasks 5" demonstrating Bootstrap badge for the number -->
+        <div class="ms-auto d-flex align-items-center gap-3">
+          <div class="d-flex align-items-center gap-2">
+            <span class="fw-bold text-dark">Pending Tasks</span>
+            <span class="badge bg-danger rounded-pill fs-6 px-3 py-1">5</span>
+          </div>
+
+          <!-- Completed button with embedded badge: "Completed <span class="badge ...">3</span>" -->
+          <button type="button" class="btn btn-success d-flex align-items-center gap-2">
+            Completed <span class="badge bg-white text-success rounded-pill px-2">3</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Semantic <main> section -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          
+          <!-- Introduction / Controls section -->
+          <section class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div>
+              <h1 class="h3 fw-bold text-dark mb-1">Academic & Project Sprint</h1>
+              <p class="text-secondary small mb-0">Prioritized coursework deliverables and semester milestones.</p>
+            </div>
+            <div class="d-flex gap-2">
+              <span class="badge bg-secondary text-white p-2">Sprint 3: Active</span>
+            </div>
+          </section>
+
+          <!-- Task Tracker List Section -->
+          <section class="card shadow-sm border-0 rounded-4 overflow-hidden">
+            <div class="card-header bg-white py-3 px-4 border-bottom d-flex justify-content-between align-items-center">
+              <h2 class="h5 mb-0 fw-bold text-dark">Current Work Queue</h2>
+              <span class="text-muted small">Updated 10 mins ago</span>
+            </div>
+
+            <div class="card-body p-0">
+              <!-- Bootstrap list-group -->
+              <div class="list-group list-group-flush">
+                
+                <!-- Task 1: Complete Bootstrap Assignment (High Priority) -->
+                <article class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3 px-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <input class="form-check-input mt-0" type="checkbox" value="" id="task1" aria-label="Mark task 1 as complete">
+                    <div>
+                      <label for="task1" class="fw-bold text-dark mb-0 d-block cursor-pointer">Complete Bootstrap Assignment</label>
+                      <small class="text-muted">Implement Q1 through Q10 with responsive layout & semantic HTML5</small>
+                    </div>
+                  </div>
+                  <!-- Priority badge: High -> badge bg-danger -->
+                  <span class="badge bg-danger px-3 py-2 rounded-pill">High Priority</span>
+                </article>
+
+                <!-- Task 2: Submit DBMS Report (High Priority) -->
+                <article class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3 px-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <input class="form-check-input mt-0" type="checkbox" value="" id="task2" aria-label="Mark task 2 as complete">
+                    <div>
+                      <label for="task2" class="fw-bold text-dark mb-0 d-block cursor-pointer">Submit DBMS Report</label>
+                      <small class="text-muted">ER Diagrams, B+ Tree Indexing analysis, and SQL query benchmarks</small>
+                    </div>
+                  </div>
+                  <!-- Priority badge: High -> badge bg-danger -->
+                  <span class="badge bg-danger px-3 py-2 rounded-pill">High Priority</span>
+                </article>
+
+                <!-- Task 3: Prepare DAA Notes (Medium Priority) -->
+                <article class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3 px-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <input class="form-check-input mt-0" type="checkbox" value="" id="task3" aria-label="Mark task 3 as complete">
+                    <div>
+                      <label for="task3" class="fw-bold text-dark mb-0 d-block cursor-pointer">Prepare DAA Notes</label>
+                      <small class="text-muted">Dynamic Programming recurrence relations and Bellman-Ford algorithms</small>
+                    </div>
+                  </div>
+                  <!-- Priority badge: Medium -> badge bg-warning -->
+                  <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">Medium Priority</span>
+                </article>
+
+                <!-- Task 4: Finish Project Documentation (Medium Priority) -->
+                <article class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3 px-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <input class="form-check-input mt-0" type="checkbox" value="" id="task4" aria-label="Mark task 4 as complete">
+                    <div>
+                      <label for="task4" class="fw-bold text-dark mb-0 d-block cursor-pointer">Finish Project Documentation</label>
+                      <small class="text-muted">Complete Swagger OpenAPI schema specifications and architecture diagrams</small>
+                    </div>
+                  </div>
+                  <!-- Priority badge: Medium -> badge bg-warning -->
+                  <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">Medium Priority</span>
+                </article>
+
+                <!-- Task 5: Review JavaScript (Low Priority) -->
+                <article class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3 px-4">
+                  <div class="d-flex align-items-center gap-3">
+                    <input class="form-check-input mt-0" type="checkbox" value="" id="task5" aria-label="Mark task 5 as complete">
+                    <div>
+                      <label for="task5" class="fw-bold text-dark mb-0 d-block cursor-pointer">Review JavaScript</label>
+                      <small class="text-muted">Closure scopes, Event Loop microtasks, and ES6+ modules</small>
+                    </div>
+                  </div>
+                  <!-- Priority badge: Low -> badge bg-success -->
+                  <span class="badge bg-success px-3 py-2 rounded-pill">Low Priority</span>
+                </article>
+
+              </div>
+            </div>
+
+            <!-- Card footer with contextual badges summary -->
+            <div class="card-footer bg-light py-3 px-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+              <span class="small text-secondary">Priority Legend:</span>
+              <div class="d-flex gap-2">
+                <span class="badge bg-danger">High (2)</span>
+                <span class="badge bg-warning text-dark">Medium (2)</span>
+                <span class="badge bg-success">Low (1)</span>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="bg-white border-top py-4 text-center mt-auto">
+    <div class="container">
+      <p class="mb-1 fw-bold text-dark">&copy; 2026 My Task Tracker. Engineered for Academic Success.</p>
+      <p class="small text-muted mb-0">Bootstrap 5 Badges, List Groups & Contextual Indicators</p>
+    </div>
+  </footer>
+
+</body>
+</html>

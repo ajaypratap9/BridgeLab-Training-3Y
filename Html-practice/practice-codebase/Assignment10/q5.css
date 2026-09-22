@@ -1,0 +1,82 @@
+/* q5.css — Custom Themed Blog Stylesheet */
+
+/* 
+   THEME CUSTOMIZATION:
+   Overriding Bootstrap CSS Custom Properties (Variables)
+   --bs-primary set to vibrant indigo / violet (#5b21b6 / #6366f1)
+   --bs-font-sans-serif set to Google Font 'Plus Jakarta Sans'
+*/
+:root {
+  --bs-primary: #6366f1;
+  --bs-primary-rgb: 99, 102, 241;
+  --bs-font-sans-serif: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-color: #1e293b;
+  --bs-body-bg: #f8fafc;
+}
+
+/* Applying the custom typography universally */
+body.custom-theme-body {
+  font-family: var(--bs-font-sans-serif);
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom theme styling for Headings */
+h1, h2, h3, h4, h5, h6, .display-4 {
+  font-family: var(--bs-font-sans-serif);
+  letter-spacing: -0.025em;
+  color: #0f172a;
+}
+
+/* Custom primary buttons conforming to theme */
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  font-weight: 600;
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #4f46e5 !important;
+  border-color: #4f46e5 !important;
+  box-shadow: 0 0.5rem 1rem rgba(99, 102, 241, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Custom Theme Cards */
+.blog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1.25rem 2rem rgba(99, 102, 241, 0.1) !important;
+}
+
+.blog-post-img {
+  height: 240px;
+  object-fit: cover;
+}
+
+/* Theme accent elements */
+.theme-logo-dot {
+  color: var(--bs-primary);
+}
+
+.category-badge {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.newsletter-banner {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  box-shadow: 0 1rem 2.5rem rgba(79, 70, 229, 0.25);
+}

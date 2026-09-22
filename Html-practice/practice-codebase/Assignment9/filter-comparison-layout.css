@@ -1,0 +1,261 @@
+/* ==========================================================================
+   filter-comparison-layout.css
+   Topic: Before/After Filter Comparison, Flexbox, Transitions & Media Queries
+   ========================================================================== */
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #090d16;
+  color: #e2e8f0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #0f172a;
+  border-bottom: 1px solid #1e293b;
+  padding: 1.25rem 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 3.5rem 0;
+}
+
+.section-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  color: #f8fafc;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: #94a3b8;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   DESKTOP: TWO IMAGES SIDE-BY-SIDE (FLEXBOX)
+   ========================================================================== */
+.comparison-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Comparison Card Container */
+.comparison-card {
+  flex: 1;
+  background-color: #111a2e;
+  border: 1px solid #1e2d4d;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image Frame */
+.image-frame {
+  height: 320px;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   REQUIRED RIGHT IMAGE: FILTER & TRANSITION
+   The right image MUST have a CSS filter applied.
+   ========================================================================== */
+.after-card img {
+  /* Applied CSS filter: brightness(70%) contrast(130%) */
+  filter: brightness(70%) contrast(130%);
+  /* Smooth transition for filter removal */
+  transition: filter 0.5s ease;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   HOVER REQUIREMENT:
+   When hovering over the filtered image, remove the filter smoothly.
+   ========================================================================== */
+.after-card img:hover {
+  /* Remove filter */
+  filter: none;
+}
+
+/* Captions below images */
+.caption {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.caption-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.normal-badge {
+  background-color: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1;
+}
+
+.filter-badge {
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+
+.caption-title {
+  font-size: 1.35rem;
+  color: #f8fafc;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.caption-desc {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: auto;
+}
+
+/* Specs Panel */
+.specs-panel {
+  background-color: #111a2e;
+  border: 1px solid #1e2d4d;
+  border-radius: 0.85rem;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.specs-panel h3 {
+  font-size: 1.1rem;
+  color: #38bdf8;
+  margin-bottom: 0.4rem;
+}
+
+.specs-panel p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.specs-panel code {
+  color: #7dd3fc;
+  background-color: #090d16;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.3rem;
+  font-family: monospace;
+}
+
+/* Footer */
+.footer {
+  background-color: #0f172a;
+  border-top: 1px solid #1e293b;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+/* ==========================================================================
+   MOBILE BREAKPOINT: BELOW 700px
+   Stack the two images vertically
+   ========================================================================== */
+@media (max-width: 700px) {
+  /* Stack images vertically on mobile */
+  .comparison-container {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .image-frame {
+    height: 240px;
+  }
+}

@@ -1,0 +1,36 @@
+/* q9.css — Custom CSS for Blog Pagination and Pager */
+
+/* Article card hover transition */
+.blog-article-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.blog-article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.08) !important;
+}
+
+.hover-title {
+  transition: color 0.2s ease;
+}
+
+.hover-title:hover {
+  color: #0d6efd !important;
+}
+
+/* Pagination custom active styling */
+.pagination .page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  font-weight: 600;
+}
+
+.pagination .page-link {
+  padding: 0.5rem 1rem;
+  color: #334155;
+}
+
+.pagination .page-link:hover {
+  color: #0d6efd;
+  background-color: #eff6ff;
+}

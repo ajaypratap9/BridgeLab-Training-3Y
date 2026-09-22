@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaTech — Build Better Products</title>
+  <!-- Bootstrap 5 CDN CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Custom CSS file -->
+  <link rel="stylesheet" href="q1.css">
+</head>
+<body>
+
+  <!-- Full-width header with semantic <header> tag -->
+  <header class="border-bottom bg-white sticky-top">
+    <!-- nav element containing Bootstrap navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+      <!-- container keeps content centered and responsive with standard gutters -->
+      <div class="container">
+        <!-- Brand logo / company name -->
+        <a class="navbar-brand fw-bold text-primary fs-3" href="#">NovaTech</a>
+        
+        <!-- Responsive toggle button for mobile navigation -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#companyNavbar" aria-controls="companyNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links collapse on small screens -->
+        <div class="collapse navbar-collapse" id="companyNavbar">
+          <!-- ms-auto pushes navigation links to the right on desktop -->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active fw-semibold" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Semantic <main> landmark containing primary page content -->
+  <main id="home">
+    <!-- Hero Section demonstrating large heading, subtitle, and CTA button -->
+    <section class="hero-section py-5 bg-light">
+      <div class="container py-lg-5">
+        <!-- row creates horizontal group of columns -->
+        <div class="row align-items-center gy-4">
+          <!-- col-12 on mobile, col-lg-7 on large desktop -->
+          <div class="col-12 col-lg-7">
+            <!-- Large main hero heading -->
+            <h1 class="display-4 fw-bold text-dark mb-3">
+              Build Better Products with <span class="text-primary">NovaTech</span>
+            </h1>
+            <!-- Lead paragraph for subtitle styling -->
+            <p class="lead text-secondary mb-4">
+              Simple digital solutions for modern businesses. We empower engineering teams to deliver scalable cloud architecture, intuitive interfaces, and rock-solid software.
+            </p>
+            <!-- CTA Button using btn and btn-primary -->
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="#services" class="btn btn-primary btn-lg px-4 shadow-sm">Get Started</a>
+              <a href="#about" class="btn btn-outline-secondary btn-lg px-4">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Hero illustration / image column -->
+          <div class="col-12 col-lg-5 text-center">
+            <!-- img-fluid ensures responsive image scaling -->
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&auto=format&fit=crop&q=80" alt="NovaTech team collaborating on product development" class="img-fluid rounded-4 shadow">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Grid Section demonstrating container, row, col -->
+    <section id="services" class="py-5">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Our Services & Solutions</h2>
+          <p class="text-muted">Explore how our cross-functional team helps scale your infrastructure.</p>
+        </div>
+
+        <!-- row with g-4 gutter spacing for responsive grid -->
+        <div class="row g-4">
+          <!-- col-md-4 creates 3 equal columns on medium+ viewports and stacks on mobile -->
+          <div class="col-12 col-md-4">
+            <article class="card h-100 p-4 border-0 shadow-sm service-card">
+              <div class="card-body">
+                <div class="badge bg-primary-subtle text-primary fs-6 p-2 rounded-3 mb-3">Cloud Architecture</div>
+                <h3 class="h5 card-title fw-bold">Cloud Engineering</h3>
+                <p class="card-text text-secondary">
+                  Design high-availability cloud platforms on AWS, GCP, and Azure with automated CI/CD deployment pipelines.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <article class="card h-100 p-4 border-0 shadow-sm service-card">
+              <div class="card-body">
+                <div class="badge bg-success-subtle text-success fs-6 p-2 rounded-3 mb-3">Product Design</div>
+                <h3 class="h5 card-title fw-bold">UI/UX Systems</h3>
+                <p class="card-text text-secondary">
+                  Craft user-first designs, accessible wireframes, and enterprise-grade design systems built to scale.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <article class="card h-100 p-4 border-0 shadow-sm service-card">
+              <div class="card-body">
+                <div class="badge bg-info-subtle text-info fs-6 p-2 rounded-3 mb-3">Data Security</div>
+                <h3 class="h5 card-title fw-bold">Cyber Defense</h3>
+                <p class="card-text text-secondary">
+                  Continuous security auditing, compliance hardening, and end-to-end data encryption for enterprise apps.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section with Grid Demonstration -->
+    <section id="about" class="py-5 bg-light">
+      <div class="container py-3">
+        <div class="row align-items-center gy-4">
+          <div class="col-12 col-md-6 order-md-2">
+            <h2 class="fw-bold mb-3">Why Industry Leaders Choose NovaTech</h2>
+            <p class="text-secondary">
+              Over 250+ tech companies rely on NovaTech to modernize their legacy tech stacks, optimize cloud expenditures, and launch digital products faster without compromising quality.
+            </p>
+            <ul class="list-unstyled text-secondary">
+              <li class="mb-2">✓ 99.99% Uptime Guarantee</li>
+              <li class="mb-2">✓ End-to-end automated testing pipelines</li>
+              <li class="mb-2">✓ 24/7 Dedicated engineering support</li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-6 order-md-1">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&auto=format&fit=crop&q=80" alt="NovaTech office environment" class="img-fluid rounded-4 shadow-sm">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA section -->
+    <section id="contact" class="py-5 text-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <h2 class="fw-bold mb-3">Ready to Accelerate Your Digital Transformation?</h2>
+            <p class="lead text-muted mb-4">Get in touch with our solutions architects today for a free discovery call.</p>
+            <a href="mailto:contact@novatech.io" class="btn btn-primary btn-lg px-5">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Semantic <footer> for copyright and footer links -->
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container text-center">
+      <p class="mb-1 fw-semibold">&copy; 2026 NovaTech Solutions Inc. All rights reserved.</p>
+      <p class="small text-secondary mb-0">Built with Bootstrap 5 — Responsive Company Landing Page</p>
+    </div>
+  </footer>
+
+</body>
+</html>

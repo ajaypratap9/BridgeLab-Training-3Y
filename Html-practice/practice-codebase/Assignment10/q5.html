@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechSphere — Modern Engineering & AI Insights</title>
+  
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CDN CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <!-- Custom Theme CSS overriding Bootstrap CSS variables -->
+  <link rel="stylesheet" href="q5.css">
+</head>
+<body class="custom-theme-body">
+
+  <!-- Semantic <header> containing blog branding and navbar -->
+  <header class="blog-header border-bottom sticky-top bg-white">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <!-- Blog Name -->
+        <a class="navbar-brand fw-bold fs-3 text-primary" href="#">
+          <span class="theme-logo-dot">●</span> TechSphere
+        </a>
+
+        <div class="d-flex align-items-center gap-3 ms-auto">
+          <!-- Navigation links -->
+          <ul class="navbar-nav d-none d-md-flex flex-row gap-3 me-3">
+            <li class="nav-item"><a class="nav-link fw-semibold active" href="#articles">Articles</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="#topics">Categories</a></li>
+            <li class="nav-item"><a class="nav-link fw-semibold" href="#newsletter">Subscribe</a></li>
+          </ul>
+          <a href="#newsletter" class="btn btn-primary btn-sm px-3 rounded-pill">Get Updates</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Semantic <main> section -->
+  <main class="py-5">
+    
+    <!-- Hero / Lead Banner -->
+    <section class="container mb-5 text-center">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-bold text-uppercase mb-3">Curated Tech Journal</span>
+          <h1 class="display-4 fw-bold mb-3">Perspectives on Next-Gen Systems & AI</h1>
+          <p class="lead text-secondary">
+            Deep technical essays, software architecture breakdowns, and distributed computing patterns written by engineering leaders.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section id="articles" class="container">
+      <div class="row g-4 justify-content-center">
+        
+        <!-- Blog Post Card 1 -->
+        <div class="col-12 col-md-6">
+          <article class="card h-100 border-0 shadow-sm blog-card rounded-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=700&auto=format&fit=crop&q=80" 
+                 class="card-img-top blog-post-img" alt="Generative AI Neural Network Visualization">
+            <div class="card-body p-4 d-flex flex-column">
+              <!-- Category -->
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge category-badge">Artificial Intelligence</span>
+                <span class="text-muted small">8 min read • Sep 2026</span>
+              </div>
+              <!-- Title -->
+              <h2 class="h4 card-title fw-bold text-dark mb-3">Architecting Resilient Multi-Agent LLM Pipelines</h2>
+              <!-- Short Description -->
+              <p class="card-text text-secondary flex-grow-1">
+                Explore the engineering trade-offs of asynchronous orchestrator-worker architectures, token stream caching, and vector memory synchronization at petabyte scale.
+              </p>
+              <!-- Read More CTA Button -->
+              <div class="mt-3 pt-3 border-top d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="small fw-semibold text-dark">By Sarah Chen</span>
+                </div>
+                <a href="#" class="btn btn-primary rounded-pill px-4">Read More &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Blog Post Card 2 -->
+        <div class="col-12 col-md-6">
+          <article class="card h-100 border-0 shadow-sm blog-card rounded-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&auto=format&fit=crop&q=80" 
+                 class="card-img-top blog-post-img" alt="Distributed Cloud Server Architecture">
+            <div class="card-body p-4 d-flex flex-column">
+              <!-- Category -->
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge category-badge">Cloud Systems</span>
+                <span class="text-muted small">12 min read • Sep 2026</span>
+              </div>
+              <!-- Title -->
+              <h2 class="h4 card-title fw-bold text-dark mb-3">Zero-Downtime Microservices Migration with eBPF</h2>
+              <!-- Short Description -->
+              <p class="card-text text-secondary flex-grow-1">
+                How kernel-level packet tracing with eBPF enables dynamic traffic rerouting, latency telemetry, and seamless database failovers without proxies.
+              </p>
+              <!-- Read More CTA Button -->
+              <div class="mt-3 pt-3 border-top d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="small fw-semibold text-dark">By David Ross</span>
+                </div>
+                <a href="#" class="btn btn-primary rounded-pill px-4">Read More &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Newsletter Section demonstrating custom themed card -->
+    <section id="newsletter" class="container mt-5 pt-4">
+      <div class="card border-0 newsletter-banner p-4 p-md-5 rounded-4 text-white text-center">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8">
+            <h2 class="fw-bold mb-2">Stay Ahead of Emerging Technologies</h2>
+            <p class="text-white-50 mb-4">Join 45,000+ engineers receiving our weekly breakdown of system design research papers.</p>
+            <div class="input-group mb-2 mx-auto" style="max-width: 480px;">
+              <input type="email" class="form-control rounded-start-pill px-4 py-2" placeholder="developer@company.com" aria-label="Your email">
+              <button class="btn btn-dark rounded-end-pill px-4 fw-semibold" type="button">Subscribe</button>
+            </div>
+            <small class="text-white-50">No spam. Unsubscribe at any time with a single click.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="bg-white border-top py-5 mt-5">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-12 col-md-4 text-center text-md-start">
+          <span class="fw-bold fs-4 text-primary"><span class="theme-logo-dot">●</span> TechSphere</span>
+          <p class="text-muted small mt-2 mb-0">The definitive publication for systems architects & developers.</p>
+        </div>
+        <!-- Basic Navigation links -->
+        <div class="col-12 col-md-4 text-center">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="#articles" class="text-secondary text-decoration-none px-2">Articles</a></li>
+            <li class="list-inline-item"><a href="#topics" class="text-secondary text-decoration-none px-2">Topics</a></li>
+            <li class="list-inline-item"><a href="#" class="text-secondary text-decoration-none px-2">Write for Us</a></li>
+            <li class="list-inline-item"><a href="#" class="text-secondary text-decoration-none px-2">Privacy</a></li>
+          </ul>
+        </div>
+        <!-- Social Links / Placeholders -->
+        <div class="col-12 col-md-4 text-center text-md-end">
+          <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle me-1">𝕏</a>
+          <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle me-1">in</a>
+          <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle">gh</a>
+        </div>
+      </div>
+      <hr class="my-4 text-muted">
+      <div class="text-center">
+        <p class="small text-secondary mb-0">&copy; 2026 TechSphere Publishing. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

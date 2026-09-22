@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive CSS Cheat Sheet — Core Fundamentals</title>
+  <!-- Link to separate custom CSS file -->
+  <link rel="stylesheet" href="responsive-css-cheat-sheet.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">CSSHandbook</div>
+      <nav class="nav">
+        <span class="edition-tag">B.Tech Web Engineering Series</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Semantic <main> -->
+  <main class="main">
+    <div class="container">
+      
+      <!-- Intro Section -->
+      <section class="intro">
+        <span class="badge">Reference Guide</span>
+        <h1 class="title">Responsive CSS Cheat Sheet</h1>
+        <p class="subtitle">
+          Master the four pillars of modern responsive web development. Built using CSS Grid with adaptive multi-column desktop layout shifting into stacked rows below 700px.
+        </p>
+      </section>
+
+      <!-- 
+        Grid Container:
+        - 2 columns on Desktop (2-3 columns requirement)
+        - 1 column stacked rows on Mobile (Below 700px)
+      -->
+      <section class="cheatsheet-grid">
+        
+        <!-- Topic 1: Filters -->
+        <article class="topic-box">
+          <div class="topic-header">
+            <span class="topic-icon">🎨</span>
+            <div class="topic-meta">
+              <span class="topic-label">Module 01</span>
+              <h2 class="topic-title">Filters</h2>
+            </div>
+          </div>
+          <p class="topic-desc">
+            CSS filters can modify the appearance of images, elements, and graphics by executing visual operations like blurring, desaturating, shifting hues, and contrast adjustments in GPU memory.
+          </p>
+          <div class="code-block">
+            <div class="code-header">Example CSS</div>
+            <pre><code>/* Apply monochrome conversion */
+img {
+    filter: grayscale(100%);
+}
+
+/* Chained visual adjustments */
+.photo-enhanced {
+    filter: contrast(130%) brightness(110%);
+}</code></pre>
+          </div>
+        </article>
+
+        <!-- Topic 2: Media Queries -->
+        <article class="topic-box">
+          <div class="topic-header">
+            <span class="topic-icon">📐</span>
+            <div class="topic-meta">
+              <span class="topic-label">Module 02</span>
+              <h2 class="topic-title">Media Queries</h2>
+            </div>
+          </div>
+          <p class="topic-desc">
+            Media queries allow styles to change based on screen size, device orientation, pixel density, and user preferences, enabling customized adaptive stylesheets.
+          </p>
+          <div class="code-block">
+            <div class="code-header">Example CSS</div>
+            <pre><code>/* Mobile breakpoint below 700px */
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+}</code></pre>
+          </div>
+        </article>
+
+        <!-- Topic 3: Responsive Design -->
+        <article class="topic-box">
+          <div class="topic-header">
+            <span class="topic-icon">🌐</span>
+            <div class="topic-meta">
+              <span class="topic-label">Module 03</span>
+              <h2 class="topic-title">Responsive Design</h2>
+            </div>
+          </div>
+          <p class="topic-desc">
+            Responsive design crafts fluid, device-agnostic user interfaces using proportional grid tracks, flexible percentage sizing, and relative box constraints that eliminate horizontal scrolling.
+          </p>
+          <div class="code-block">
+            <div class="code-header">Example CSS</div>
+            <pre><code>/* Auto-fitting responsive grid */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}</code></pre>
+          </div>
+        </article>
+
+        <!-- Topic 4: Typography -->
+        <article class="topic-box">
+          <div class="topic-header">
+            <span class="topic-icon">✍</span>
+            <div class="topic-meta">
+              <span class="topic-label">Module 04</span>
+              <h2 class="topic-title">Typography</h2>
+            </div>
+          </div>
+          <p class="topic-desc">
+            Fluid typography dynamically computes font sizes between safe minimum and maximum boundaries based on viewport width, preserving visual hierarchy without jumpy breakpoints.
+          </p>
+          <div class="code-block">
+            <div class="code-header">Example CSS</div>
+            <pre><code>/* Clamped fluid typography */
+h1 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    line-height: 1.2;
+}
+
+p {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+}</code></pre>
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 CSSHandbook. Assignment 9 (Q6) — Responsive CSS Cheat Sheet.</p>
+      <p class="footer-note">Designed with pure semantic HTML5 and CSS Grid.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

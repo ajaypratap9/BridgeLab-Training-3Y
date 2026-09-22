@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Team — Filter Cards with Page-Load Animation</title>
+  <!-- Link to separate custom CSS file -->
+  <link rel="stylesheet" href="filter-cards-animation.css">
+</head>
+<body>
+
+  <!-- Semantic <header> containing navbar -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">DevSquad</div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#team" class="active">Leadership Team</a></li>
+          <li><a href="#careers">Open Roles</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Semantic <main> section -->
+  <main class="main" id="team">
+    <div class="container">
+      
+      <!-- Section Intro -->
+      <section class="section-intro">
+        <span class="badge">Core Contributors</span>
+        <h1 class="heading">Meet Our System Engineers</h1>
+        <p class="subheading">
+          Hover over each profile card to lift the card and restore natural image vibrancy. Demonstrates CSS keyframe fade-in animations, filter toggling, and translateY transformations.
+        </p>
+      </section>
+
+      <!-- 
+        Three Profile Cards using Flexbox:
+        - Image filters: Card 1 (Grayscale 100%), Card 2 (Sepia 100%), Card 3 (Brightness 70%)
+        - Hover: remove filter & translateY(-10px) lift
+        - Page-load fadeIn @keyframes
+        - Below 800px: stack vertically
+      -->
+      <section class="profiles-flex-container">
+        
+        <!-- Profile Card 1 -->
+        <article class="profile-card">
+          <div class="avatar-wrap">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80" 
+                 alt="Elena Rostova, Principal Cloud Architect" loading="lazy">
+          </div>
+          <div class="profile-body">
+            <h2 class="name">Elena Rostova</h2>
+            <span class="role">Principal Cloud Architect</span>
+            <p class="bio">
+              Specializes in distributed consensus algorithms, Kubernetes cluster federation, and petabyte-scale streaming pipelines.
+            </p>
+            <div class="filter-indicator">Default: Grayscale Filter</div>
+          </div>
+        </article>
+
+        <!-- Profile Card 2 -->
+        <article class="profile-card">
+          <div class="avatar-wrap">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80" 
+                 alt="Marcus Vance, Head of Cryptographic Systems" loading="lazy">
+          </div>
+          <div class="profile-body">
+            <h2 class="name">Marcus Vance</h2>
+            <span class="role">Head of Cryptography</span>
+            <p class="bio">
+              Researches zero-knowledge proofs, post-quantum cryptography, and hardware-accelerated signature verification kernels.
+            </p>
+            <div class="filter-indicator">Default: Sepia Filter</div>
+          </div>
+        </article>
+
+        <!-- Profile Card 3 -->
+        <article class="profile-card">
+          <div class="avatar-wrap">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=80" 
+                 alt="Sophia Zhang, VP of Product Engineering" loading="lazy">
+          </div>
+          <div class="profile-body">
+            <h2 class="name">Sophia Zhang</h2>
+            <span class="role">VP of Product Engineering</span>
+            <p class="bio">
+              Leads full-stack platform development, reactive frontend UI design systems, and cross-functional design sprints.
+            </p>
+            <div class="filter-indicator">Default: Brightness Filter</div>
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 DevSquad Engineering. All rights reserved.</p>
+      <p class="footer-note">Assignment 9 (Q5) — Filter Cards with Keyframe Load Animation</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Pseudo-Classes Interactive Showcase</title>
+  <!-- Link to separate custom CSS stylesheet -->
+  <link rel="stylesheet" href="pseudo-classes-demo.css">
+</head>
+<body>
+
+  <!-- Semantic <header> with navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand-logo">CSS States Lab</div>
+      <nav class="site-nav">
+        <ul class="nav-menu">
+          <li><a href="#demos" class="nav-item">Demonstrations</a></li>
+          <li><a href="#about" class="nav-item">Reference</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Semantic <main> container -->
+  <main class="main-content" id="demos">
+    
+    <!-- Hero introduction section -->
+    <section class="intro-section">
+      <span class="badge">Interactive Learning Module</span>
+      <h1 class="main-title">Understanding CSS Pseudo-Classes</h1>
+      <p class="main-description">
+        CSS pseudo-classes target elements based on user interaction states, document history, and DOM tree positions. Interact with each panel below to observe state transitions.
+      </p>
+    </section>
+
+    <!-- 
+      Flexbox Container for Pseudo-Class Demonstrations:
+      Arranged in one row on larger screens, wraps/stacks on smaller screens.
+    -->
+    <section class="demos-flex-row">
+
+      <!-- Panel 1: :hover Demo -->
+      <article class="demo-card">
+        <div class="card-header">
+          <span class="state-pill state-hover">:hover</span>
+          <h2>Pointer Hover</h2>
+        </div>
+        <div class="interactive-area">
+          <!-- Interactive link demonstrating :hover -->
+          <a href="#" class="demo-link">Hover Over Me</a>
+        </div>
+        <div class="card-explanation">
+          <p class="explanation-text">
+            <strong>:hover</strong> applies styles when the user positions the pointing device (mouse cursor) over an element without activating it.
+          </p>
+          <div class="code-preview">
+            <code>.demo-link:hover { color: #fff; background: #2563eb; }</code>
+          </div>
+        </div>
+      </article>
+
+      <!-- Panel 2: :focus Demo -->
+      <article class="demo-card">
+        <div class="card-header">
+          <span class="state-pill state-focus">:focus</span>
+          <h2>Keyboard & Click Focus</h2>
+        </div>
+        <div class="interactive-area">
+          <!-- Interactive input demonstrating :focus -->
+          <input type="text" class="demo-input" placeholder="Click or Tab to focus..." aria-label="Demo focus input">
+        </div>
+        <div class="card-explanation">
+          <p class="explanation-text">
+            <strong>:focus</strong> applies styles when an element receives keyboard focus or user selection, essential for accessible navigation.
+          </p>
+          <div class="code-preview">
+            <code>.demo-input:focus { outline: 3px solid #93c5fd; }</code>
+          </div>
+        </div>
+      </article>
+
+      <!-- Panel 3: :active Demo -->
+      <article class="demo-card">
+        <div class="card-header">
+          <span class="state-pill state-active">:active</span>
+          <h2>Activation State</h2>
+        </div>
+        <div class="interactive-area">
+          <!-- Interactive button demonstrating :active -->
+          <button type="button" class="demo-button">Click &amp; Hold Me</button>
+        </div>
+        <div class="card-explanation">
+          <p class="explanation-text">
+            <strong>:active</strong> applies styles during the active activation phase between the mouse button press and its release.
+          </p>
+          <div class="code-preview">
+            <code>.demo-button:active { transform: scale(0.95); }</code>
+          </div>
+        </div>
+      </article>
+
+      <!-- Panel 4: :nth-child() Demo -->
+      <article class="demo-card">
+        <div class="card-header">
+          <span class="state-pill state-nth">:nth-child()</span>
+          <h2>Structural Ordering</h2>
+        </div>
+        <div class="interactive-area">
+          <!-- List demonstrating :nth-child() selectors -->
+          <ul class="demo-list">
+            <li>Item 1: Default Child</li>
+            <li>Item 2: Highlighted (:nth-child(2))</li>
+            <li>Item 3: Default Child</li>
+            <li>Item 4: Highlighted (:nth-child(4))</li>
+          </ul>
+        </div>
+        <div class="card-explanation">
+          <p class="explanation-text">
+            <strong>:nth-child(an+b)</strong> targets elements based on their numeric ordinal index among siblings in the parent container.
+          </p>
+          <div class="code-preview">
+            <code>.demo-list li:nth-child(2) { background: #dbeafe; }</code>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Educational reference section -->
+    <section class="reference-section" id="about">
+      <article class="reference-box">
+        <h2>Why Pseudo-Classes Matter in UI Engineering</h2>
+        <p>
+          Pseudo-classes allow web designers to build reactive, accessible, and intuitive user interfaces purely using CSS declarative stylesheets without heavy JavaScript event handlers. Combining stateful pseudo-classes with CSS transforms and transitions provides instantaneous feedback for tactile user interactions.
+        </p>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 CSS States Lab. Assignment 8 — Question 1 Demonstration.</p>
+      <p class="footer-sub">Pure HTML5 &amp; CSS3. Zero JavaScript. Zero external frameworks.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

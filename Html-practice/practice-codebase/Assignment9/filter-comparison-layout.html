@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhotoGrade Studio — Filter Comparison Layout</title>
+  <!-- Link to separate custom CSS file -->
+  <link rel="stylesheet" href="filter-comparison-layout.css">
+</head>
+<body>
+
+  <!-- Semantic <header> -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">PhotoGrade Studio</div>
+      <span class="tagline">Color Grading & Filter Analysis</span>
+    </div>
+  </header>
+
+  <!-- Semantic <main> -->
+  <main class="main">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <section class="section-intro">
+        <span class="badge">Visual Comparison</span>
+        <h1 class="title">Before & After Filter Lab</h1>
+        <p class="subtitle">
+          Observe real-time GPU CSS shader processing. The right-hand image showcases a custom brightness and high-contrast atmospheric filter. Hover directly over the filtered image to seamlessly revert to natural color fidelity.
+        </p>
+      </section>
+
+      <!-- 
+        Comparison Layout:
+        - Desktop: Two images side-by-side using Flexbox
+        - Right image (.after): Has CSS filter applied
+        - Hover: Removes filter with 0.5s smooth transition
+        - Mobile below 700px: Stacks vertically
+      -->
+      <section class="comparison-container">
+        
+        <!-- Left Item: Before Filter (Natural Image) -->
+        <article class="comparison-card before-card">
+          <div class="image-frame">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80" 
+                 alt="Natural alpine lake landscape photography before filter" loading="lazy">
+          </div>
+          <figcaption class="caption">
+            <span class="caption-badge normal-badge">Source Master</span>
+            <h2 class="caption-title">Before Filter</h2>
+            <p class="caption-desc">Standard sRGB digital camera sensor capture without post-processing adjustments.</p>
+          </figcaption>
+        </article>
+
+        <!-- Right Item: After Filter (Filtered with Hover Removal) -->
+        <article class="comparison-card after-card">
+          <div class="image-frame">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80" 
+                 alt="Stylized alpine lake landscape photography after filter" loading="lazy">
+          </div>
+          <figcaption class="caption">
+            <span class="caption-badge filter-badge">CSS Filter: 70% Brightness + 130% Contrast</span>
+            <h2 class="caption-title">After Filter</h2>
+            <p class="caption-desc">Hover over this image to trigger smooth 0.5s CSS transition restoring natural colors.</p>
+          </figcaption>
+        </article>
+
+      </section>
+
+      <!-- Technical breakdown -->
+      <section class="specs-panel">
+        <h3>Technical CSS Implementation</h3>
+        <p>
+          The right element utilizes <code>filter: brightness(70%) contrast(130%);</code> combined with <code>transition: filter 0.5s ease;</code>. On hover state, <code>filter: none;</code> is dispatched, smoothly re-interpolating color channels.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 PhotoGrade Studio. Assignment 9 (Q8) — Filter Comparison Layout.</p>
+      <p class="footer-note">Built using pure semantic HTML5 & Flexbox responsive architecture.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

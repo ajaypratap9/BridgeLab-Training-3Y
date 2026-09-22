@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spice Garden — Authentic Indian Cuisine</title>
+  <!-- Bootstrap 5 CDN CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Custom CSS for Question 4 -->
+  <link rel="stylesheet" href="q4.css">
+</head>
+<body class="bg-light">
+
+  <!-- Semantic <header> containing restaurant branding and navigation -->
+  <header class="bg-dark text-white border-bottom border-warning py-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3 text-warning" href="#">Spice Garden</a>
+        <div class="ms-auto d-flex gap-3">
+          <a href="#menu" class="nav-link text-white-50">Today's Menu</a>
+          <a href="#specials" class="nav-link text-white-50">Chef's Specials</a>
+          <a href="#gallery" class="nav-link text-white-50">Signature Dish</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Semantic <main> section -->
+  <main class="py-5">
+    
+    <!-- Hero Header demonstrating text-center and lead typography utilities -->
+    <section class="container text-center mb-5"> <!-- Demonstrating text-center -->
+      <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold text-uppercase mb-2">Fine Dining & Catering</span>
+      <h1 class="display-4 fw-bold text-dark">Welcome to Spice Garden</h1>
+      <!-- Demonstrating lead utility class -->
+      <p class="lead text-secondary mx-auto" style="max-width: 650px;">
+        Experience the royal heritage of traditional spices, slow-cooked gravies, and tandoori delicacies prepared fresh daily by Master Chefs.
+      </p>
+    </section>
+
+    <!-- Component 1: Today's Menu Table -->
+    <section id="menu" class="container mb-5">
+      <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+        <div class="card-header bg-dark text-white py-3 px-4 d-flex justify-content-between align-items-center">
+          <h2 class="h4 mb-0 fw-bold text-warning">Today's Full Menu</h2>
+          <span class="badge bg-success">Fresh Daily</span>
+        </div>
+        <div class="card-body p-0">
+          <!-- Bootstrap table responsive wrapper -->
+          <div class="table-responsive">
+            <!-- Bootstrap table with striped, hover, and aligned rows -->
+            <table class="table table-striped table-hover align-middle mb-0">
+              <thead class="table-secondary">
+                <tr>
+                  <th scope="col" class="py-3 px-4">Item</th>
+                  <th scope="col" class="py-3 px-4">Category</th>
+                  <th scope="col" class="py-3 px-4 text-end">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="px-4 fw-semibold text-dark">Crispy Vegetable Spring Rolls</td>
+                  <td class="px-4"><span class="badge bg-info-subtle text-info-emphasis">Starters</span></td>
+                  <td class="px-4 text-end fw-bold text-success">$8.50</td>
+                </tr>
+                <tr>
+                  <td class="px-4 fw-semibold text-dark">Chicken Tikka Angara</td>
+                  <td class="px-4"><span class="badge bg-info-subtle text-info-emphasis">Starters</span></td>
+                  <td class="px-4 text-end fw-bold text-success">$11.00</td>
+                </tr>
+                <tr>
+                  <td class="px-4 fw-semibold text-dark">Shahi Paneer Lababdar</td>
+                  <td class="px-4"><span class="badge bg-primary-subtle text-primary-emphasis">Main Course</span></td>
+                  <td class="px-4 text-end fw-bold text-success">$15.50</td>
+                </tr>
+                <tr>
+                  <td class="px-4 fw-semibold text-dark">Dum Handi Mutton Korma</td>
+                  <td class="px-4"><span class="badge bg-primary-subtle text-primary-emphasis">Main Course</span></td>
+                  <td class="px-4 text-end fw-bold text-success">$18.99</td>
+                </tr>
+                <tr>
+                  <td class="px-4 fw-semibold text-dark">Warm Gulab Jamun with Rabdi</td>
+                  <td class="px-4"><span class="badge bg-danger-subtle text-danger-emphasis">Desserts</span></td>
+                  <td class="px-4 text-end fw-bold text-success">$6.50</td>
+                </tr>
+                <tr>
+                  <td class="px-4 fw-semibold text-dark">Royal Rasmalai Delight</td>
+                  <td class="px-4"><span class="badge bg-danger-subtle text-danger-emphasis">Desserts</span></td>
+                  <td class="px-4 text-end fw-bold text-success">$7.00</td>
+                </tr>
+                <tr>
+                  <td class="px-4 fw-semibold text-dark">Kesar Mango Lassi</td>
+                  <td class="px-4"><span class="badge bg-warning-subtle text-warning-emphasis">Beverages</span></td>
+                  <td class="px-4 text-end fw-bold text-success">$4.99</td>
+                </tr>
+                <tr>
+                  <td class="px-4 fw-semibold text-dark">Masala Spiced Chai</td>
+                  <td class="px-4"><span class="badge bg-warning-subtle text-warning-emphasis">Beverages</span></td>
+                  <td class="px-4 text-end fw-bold text-success">$3.50</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Component 2 & 3: Chef's Specials (List Group) & Food Image (.img-fluid with caption) -->
+    <section id="specials" class="container py-3">
+      <div class="row g-4 align-items-center">
+        
+        <!-- Chef's Specials List Group -->
+        <div class="col-12 col-md-6">
+          <article class="card border-0 shadow-sm rounded-4 h-100 p-4 bg-white">
+            <h2 class="h4 fw-bold text-dark mb-3 border-bottom pb-2">Chef's Handpicked Specials</h2>
+            <p class="text-secondary small mb-3">Our executive chef recommends these curated masterpieces, slow-cooked in traditional clay tandoors.</p>
+            
+            <!-- Bootstrap List Group -->
+            <ul class="list-group list-group-flush rounded-3">
+              <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                <div>
+                  <span class="fw-bold text-dark d-block">Paneer Tikka</span>
+                  <small class="text-muted">Chargrilled cottage cheese marinated in aromatic mustard oil</small>
+                </div>
+                <span class="badge bg-warning text-dark rounded-pill">Chef's Pick</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                <div>
+                  <span class="fw-bold text-dark d-block">Butter Chicken</span>
+                  <small class="text-muted">Tender tandoori chicken simmered in rich creamy tomato velvet</small>
+                </div>
+                <span class="badge bg-danger rounded-pill">Bestseller</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                <div>
+                  <span class="fw-bold text-dark d-block">Dal Makhani</span>
+                  <small class="text-muted">Black lentils simmered overnight with churned butter and fenugreek</small>
+                </div>
+                <span class="badge bg-success rounded-pill">Vegetarian</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                <div>
+                  <span class="fw-bold text-dark d-block">Special Biryani</span>
+                  <small class="text-muted">Fragrant long-grain basmati infused with saffron and royal spices</small>
+                </div>
+                <span class="badge bg-primary rounded-pill">Signature</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                <div>
+                  <span class="fw-bold text-dark d-block">Gulab Jamun</span>
+                  <small class="text-muted">Golden fried milk dumplings soaked in cardamom sugar syrup</small>
+                </div>
+                <span class="badge bg-secondary rounded-pill">Classic</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Food Image with .img-fluid and caption -->
+        <div class="col-12 col-md-6" id="gallery">
+          <article class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white p-3 text-center">
+            <figure class="figure mb-0">
+              <!-- Responsive food image using .img-fluid -->
+              <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=700&auto=format&fit=crop&q=80" 
+                   class="figure-img img-fluid rounded-4 shadow-sm" 
+                   alt="Authentic Royal Biryani served with garnish and spices">
+              <!-- Caption below/around image -->
+              <figcaption class="figure-caption text-center mt-3">
+                <span class="fw-bold text-dark d-block fs-6">Royal Dum Biryani — Chef's Pride</span>
+                Slow cooked in sealed clay pots to seal in every ounce of spice aroma and rich flavor.
+              </figcaption>
+            </figure>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Semantic <footer> -->
+  <footer class="bg-dark text-white border-top border-warning py-4 text-center mt-5">
+    <div class="container">
+      <p class="mb-1 fw-bold text-warning fs-5">Spice Garden Authentic Dining</p>
+      <p class="small text-white-50 mb-1">Open Tuesday – Sunday: 11:30 AM to 11:00 PM | Reservations: (555) 349-8200</p>
+      <p class="small text-secondary mb-0">&copy; 2026 Spice Garden Restaurant. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
