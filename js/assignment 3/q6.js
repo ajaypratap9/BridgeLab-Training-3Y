@@ -1,0 +1,1 @@
+q6_pyramid_pattern.js
